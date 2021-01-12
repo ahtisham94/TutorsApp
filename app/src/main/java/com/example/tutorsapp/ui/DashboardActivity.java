@@ -4,12 +4,16 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -168,7 +172,14 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         alertDialogBuilder.setView(view);
         alertDialogBuilder.setCancelable(true);
 
+
         final AlertDialog dialog = alertDialogBuilder.create();
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawableResource(R.drawable.dialog_bg);
+            dialog.getWindow().setSoftInputMode(
+                    WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        }
         final EditText institutionNameEv = view.findViewById(R.id.institutionNameEv);
         final EditText universityEv = view.findViewById(R.id.universityEv);
         final EditText levelEv = view.findViewById(R.id.levelEv);
