@@ -12,30 +12,22 @@ import android.widget.Toast;
 
 import com.example.tutorsapp.R;
 import com.example.tutorsapp.adapter.AcademySpinnerAdapter;
-import com.example.tutorsapp.TutorApp;
 import com.example.tutorsapp.helper.Constants;
 import com.example.tutorsapp.models.AcademyCategories;
 import com.example.tutorsapp.models.AcademyDetailsModel;
 import com.example.tutorsapp.models.AcademyFeatureModel;
 import com.example.tutorsapp.models.GeneralResponse;
-import com.example.tutorsapp.models.LOVCategoryResponseModel;
 import com.example.tutorsapp.models.OwnerModel;
 import com.example.tutorsapp.models.UserInfo;
 import com.example.tutorsapp.network.APIManager;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
 import com.example.tutorsapp.ui.dialogs.ClassEnvironmentDialog;
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import retrofit2.Response;
 
 import static com.example.tutorsapp.TutorApp.getContext;

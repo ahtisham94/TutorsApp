@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,20 +15,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.tutorsapp.R;
-import com.example.tutorsapp.adapter.CheckboxSpinnerApater;
 import com.example.tutorsapp.adapter.GenericCustomSpinnerAdapter;
 import com.example.tutorsapp.models.AcademyCategories;
 import com.example.tutorsapp.models.AcademyFeatureModel;
 import com.example.tutorsapp.models.LOVResponseModel;
-import com.example.tutorsapp.models.TeachingModeModel;
 import com.example.tutorsapp.models.TimeSlotModel;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
-import com.google.gson.Gson;
+import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
 import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONStringer;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

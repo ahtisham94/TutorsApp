@@ -22,6 +22,7 @@ import com.example.tutorsapp.models.LOVSRequestModel;
 import com.example.tutorsapp.models.OwnerModel;
 import com.example.tutorsapp.models.PreferedAreaModelRequest;
 import com.example.tutorsapp.models.RequestModel;
+import com.example.tutorsapp.models.ShareTecherDetailsModel;
 import com.example.tutorsapp.models.TeacherModel;
 import com.example.tutorsapp.models.login.LoginRequestModel;
 import com.example.tutorsapp.models.login.LoginValidateOTPRequest;
@@ -203,6 +204,12 @@ public class APIManager {
         sendResultGeneric(result, callback);
     }
 
+    public void shareTeacherDetails(CallbackGenric callback, ShareTecherDetailsModel body) {
+        GetDataService service = retrofit.create(GetDataService.class);
+        Call<GeneralResponse> result = service.shareTeacherDetails("application/json", body);
+        sendResultGeneric(result, callback);
+    }
+
     private <T> void sendResultGeneric(Call<T> call, final CallbackGenric result) {
         Dialog dialog = null;
         if (TutorApp.getInstance().getmCurrentActivity() != null && !TutorApp.getInstance().getmCurrentActivity().isFinishing()) {
@@ -215,8 +222,12 @@ public class APIManager {
         call.enqueue(new retrofit2.Callback<T>() {
             @Override
             public void onResponse(Call<T> call, Response<T> response) {
-                if (finalDialog != null)
-                    finalDialog.dismiss();
+                try {
+                    if (finalDialog != null)
+                        finalDialog.dismiss();
+                } catch (Exception e) {
+
+                }
 
                 if (response.isSuccessful()) {
                     result.onResult(true, response);
@@ -234,8 +245,13 @@ public class APIManager {
 
             @Override
             public void onFailure(Call<T> call, Throwable t) {
-                if (finalDialog != null)
-                    finalDialog.dismiss();
+                try {
+
+                    if (finalDialog != null)
+                        finalDialog.dismiss();
+                } catch (Exception e) {
+
+                }
                 result.onError(t.getMessage());
             }
         });

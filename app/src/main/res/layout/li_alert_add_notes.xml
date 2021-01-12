@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
     android:paddingBottom="@dimen/_10sdp">
 
 
@@ -50,6 +51,9 @@
         style="@style/text_view_style"
         android:layout_marginTop="12dp"
         android:hint="@string/institute_school_college"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoriesEl" />
 
@@ -58,6 +62,9 @@
         style="@style/text_view_style"
         android:layout_marginTop="12dp"
         android:hint="Board(e.g. Federal)"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/institutionNameEv" />
@@ -67,6 +74,9 @@
         style="@style/text_view_style"
         android:layout_marginTop="12dp"
         android:hint="Level(e.g. part 1)"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/universityEv" />
@@ -76,23 +86,27 @@
         style="@style/text_view_style"
         android:layout_marginTop="12dp"
         android:hint="Subject"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/levelEv" />
 
-    <RelativeLayout
+    <EditText
         android:id="@+id/youHaveR1"
-        style="@style/spinner_rl_style"
+        style="@style/text_view_style"
+        android:ellipsize="end"
+        android:hint="Add little description"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLength="50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subjectEv">
 
-        <Spinner
-            android:id="@+id/gradeSp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
-    </RelativeLayout>
+    </EditText>
 
     <Button
         android:id="@+id/saveBtn"

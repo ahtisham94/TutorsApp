@@ -1,13 +1,11 @@
 package com.example.tutorsapp.ui;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -25,7 +23,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -34,11 +31,8 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.tutorsapp.R;
-import com.example.tutorsapp.enumerationss.TeacherTypeEnum;
 import com.example.tutorsapp.helper.Constants;
-import com.example.tutorsapp.models.GeneralResponse;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
-import com.google.android.gms.maps.model.LatLng;
+import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
 
 import java.io.File;
 import java.io.FileNotFoundException;

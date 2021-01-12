@@ -15,6 +15,7 @@ import com.example.tutorsapp.models.LOVSRequestModel;
 import com.example.tutorsapp.models.OwnerModel;
 import com.example.tutorsapp.models.PreferedAreaModelRequest;
 import com.example.tutorsapp.models.RequestModel;
+import com.example.tutorsapp.models.ShareTecherDetailsModel;
 import com.example.tutorsapp.models.TeacherModel;
 import com.example.tutorsapp.models.login.LoginRequestModel;
 import com.example.tutorsapp.models.login.LoginValidateOTPRequest;
@@ -97,6 +98,9 @@ public interface GetDataService {
 
     @POST("/Academy/AddAcademyTeacherProfile")
     Call<GeneralResponse> addAcademyTeacher(@Body RequestBody body);
+
+    @POST("/Teacher/ShareDetailsRequest")
+    Call<GeneralResponse> shareTeacherDetails(@Header("Content-Type") String contentType, @Body ShareTecherDetailsModel body);
 
     @POST("/Teacher/GetTeacherSendedRequests")
     Call<GeneralResponse<List<RequestModel>>> getTeacherSentRequests(@Body RequestModel body);

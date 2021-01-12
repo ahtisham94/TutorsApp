@@ -1,6 +1,5 @@
 package com.example.tutorsapp.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
@@ -9,13 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.tutorsapp.R;
-import com.example.tutorsapp.models.AccountDetails;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
+import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

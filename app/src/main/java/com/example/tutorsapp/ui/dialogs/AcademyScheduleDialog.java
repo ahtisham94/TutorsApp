@@ -28,10 +28,9 @@ import com.example.tutorsapp.interfaces.CallbackGen;
 import com.example.tutorsapp.models.AcademyScheduleModel;
 import com.example.tutorsapp.ui.AddLocationActivity;
 import com.example.tutorsapp.ui.BaseActivity;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
+import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
 import com.example.tutorsapp.utils.Validations;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;

@@ -7,12 +7,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,12 +22,11 @@ import com.example.tutorsapp.enumerationss.TeacherTypeEnum;
 import com.example.tutorsapp.helper.Constants;
 import com.example.tutorsapp.helper.DialogHelper;
 import com.example.tutorsapp.models.EducationDetailModel;
-import com.example.tutorsapp.models.EducationModel;
 import com.example.tutorsapp.models.GeneralResponse;
 import com.example.tutorsapp.models.LOVResponseModel;
 import com.example.tutorsapp.models.LOVSRequestModel;
 import com.example.tutorsapp.network.APIManager;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
+import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

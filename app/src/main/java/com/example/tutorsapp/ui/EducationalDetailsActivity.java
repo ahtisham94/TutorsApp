@@ -25,7 +25,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,7 +48,7 @@ import com.example.tutorsapp.models.LOVCategoryResponseModel;
 import com.example.tutorsapp.models.LOVResponseModel;
 import com.example.tutorsapp.models.TeachingModeModel;
 import com.example.tutorsapp.network.APIManager;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
+import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
 import com.example.tutorsapp.ui.dialogs.AddCategporyDialog;
 import com.example.tutorsapp.ui.dialogs.AddEducationDialog;
 import com.example.tutorsapp.ui.dialogs.TeacherSocialIdDialog;

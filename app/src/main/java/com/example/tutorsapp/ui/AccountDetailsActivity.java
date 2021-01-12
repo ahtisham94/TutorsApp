@@ -26,7 +26,7 @@ import com.example.tutorsapp.models.GeneralResponse;
 import com.example.tutorsapp.models.LOVResponseModel;
 import com.example.tutorsapp.models.UserInfo;
 import com.example.tutorsapp.network.APIManager;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
+import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
 import com.example.tutorsapp.ui.customview.TimeLineCustomView;
 import com.example.tutorsapp.utils.Validations;
 

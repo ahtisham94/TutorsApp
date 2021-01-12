@@ -28,24 +28,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tutorsapp.BuildConfig;
 import com.example.tutorsapp.R;
 import com.example.tutorsapp.adapter.CurrentAssignmentRecyclerAdapter;
+import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
+import com.example.tutorsapp.adapter.GenericCustomSpinnerAdapter;
 import com.example.tutorsapp.enumerationss.TeacherTypeEnum;
 import com.example.tutorsapp.helper.Constants;
+import com.example.tutorsapp.helper.DialogHelper;
 import com.example.tutorsapp.helper.Persister;
 import com.example.tutorsapp.models.EducationDetailModel;
 import com.example.tutorsapp.models.GeneralResponse;
+import com.example.tutorsapp.models.LOVResponseModel;
 import com.example.tutorsapp.models.RequestModel;
 import com.example.tutorsapp.models.RequestedAssignmentModel;
+import com.example.tutorsapp.models.ShareTecherDetailsModel;
 import com.example.tutorsapp.models.UserInfo;
 import com.example.tutorsapp.network.APIManager;
+import com.google.android.gms.common.api.Api;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Response;
 
-public class DashboardActivity extends BaseActivity implements View.OnClickListener {
+public class DashboardActivity extends BaseActivity implements View.OnClickListener, APIManager.CallbackGenric {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -162,34 +169,26 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         alertDialogBuilder.setCancelable(true);
 
         final AlertDialog dialog = alertDialogBuilder.create();
-        final Spinner gradeSp = view.findViewById(R.id.gradeSp);
         final EditText institutionNameEv = view.findViewById(R.id.institutionNameEv);
         final EditText universityEv = view.findViewById(R.id.universityEv);
         final EditText levelEv = view.findViewById(R.id.levelEv);
         final EditText subjectEv = view.findViewById(R.id.subjectEv);
+        final EditText youHaveR1 = view.findViewById(R.id.youHaveR1);
         Button saveBtn = view.findViewById(R.id.saveBtn);
-
-        final EducationDetailModel education = new EducationDetailModel();
-
-        ArrayAdapter<CharSequence> gradeAdapter = ArrayAdapter.createFromResource(this, R.array.youHaving, R.layout.li_spinner);
-        gradeAdapter.setDropDownViewResource(R.layout.li_spinner);
-        gradeSp.setAdapter(gradeAdapter);
-        gradeSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-//                education.setGrade(gradeSp.getSelectedItem().toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-//                education.setGrade("");
-            }
-        });
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                ShareTecherDetailsModel techerDetailsModel = new ShareTecherDetailsModel();
+                techerDetailsModel.setInstituteName(institutionNameEv.getText().toString());
+                techerDetailsModel.setBoard(universityEv.getText().toString());
+                techerDetailsModel.setEducationLevel(levelEv.getText().toString());
+                techerDetailsModel.setSubject(subjectEv.getText().toString());
+                techerDetailsModel.setSharedBy("");
+                techerDetailsModel.setDescription(youHaveR1.getText().toString());
+                APIManager.getInstance().shareTeacherDetails(DashboardActivity.this, techerDetailsModel);
+
             }
         });
 
@@ -225,5 +224,17 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
 
             }
         }, requestModel);
+    }
+
+    @Override
+    public void onResult(boolean z, Response response) {
+        if (((GeneralResponse) response.body()).getIsSuccess()) {
+            DialogHelper.showMessageDialog(this,"Information","Your Informations has been saved");
+        }
+    }
+
+    @Override
+    public void onError(String error) {
+
     }
 }

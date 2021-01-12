@@ -2,7 +2,6 @@ package com.example.tutorsapp.ui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,9 +22,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.tutorsapp.R;
-import com.example.tutorsapp.TutorApp;
 import com.example.tutorsapp.adapter.AcademySpinnerAdapter;
-import com.example.tutorsapp.adapter.GenericCustomSpinnerAdapter;
 import com.example.tutorsapp.adapter.SubjectTechAdapter;
 import com.example.tutorsapp.enumerationss.LOVsType;
 import com.example.tutorsapp.enumerationss.TeacherTypeEnum;
@@ -33,23 +30,19 @@ import com.example.tutorsapp.helper.Constants;
 import com.example.tutorsapp.helper.DialogHelper;
 import com.example.tutorsapp.models.AcademyDetailsModel;
 import com.example.tutorsapp.models.GeneralResponse;
-import com.example.tutorsapp.models.GenericList;
 import com.example.tutorsapp.models.LOVCategoryResponseModel;
 import com.example.tutorsapp.models.LOVResponseModel;
 import com.example.tutorsapp.models.OwnerModel;
 import com.example.tutorsapp.models.UserInfo;
 import com.example.tutorsapp.network.APIManager;
-import com.example.tutorsapp.ui.customview.CustomSpinnerAdapter;
 import com.example.tutorsapp.ui.dialogs.AddCategporyDialog;
 import com.example.tutorsapp.ui.dialogs.ContactDetailsDialog;
 import com.example.tutorsapp.ui.dialogs.ImagesPickerDialog;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
