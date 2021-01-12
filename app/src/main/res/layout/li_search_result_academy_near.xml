@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/buildingIv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:contentDescription="@string/icon"
+            android:scaleType="fitXY"
+            android:src="@drawable/mask_group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Adnan Shokat"
+            android:textColor="@color/graniteGreen"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buildingIv" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="1"
+            android:stepSize="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+
+        <View
+            android:id="@+id/horiontalDivider"
+            style="@style/Divider.Vertical"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="@dimen/_7sdp"
+            android:layout_marginStart="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+            app:layout_constraintStart_toEndOf="@+id/ratingBar"
+            app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+        <TextView
+            android:id="@+id/distanceTv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Distance 5KM"
+            android:textColor="@color/textColorLoginScreen"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/horiontalDivider"
+            app:layout_constraintStart_toEndOf="@+id/horiontalDivider"
+            app:layout_constraintTop_toTopOf="@+id/horiontalDivider" />
+
+
+        <ImageView
+            android:id="@+id/dmIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:contentDescription="@string/icon"
+            android:scaleType="fitXY"
+            android:src="@drawable/green_arrow"
+            app:layout_constraintEnd_toEndOf="@+id/buildingIv"
+            app:layout_constraintTop_toBottomOf="@+id/buildingIv" />
+
+        <TextView
+            android:id="@+id/distanceLableTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:text="Distance"
+            android:textColor="@color/textColorLoginScreen"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <TextView
+            android:id="@+id/distanceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:text="5KM"
+            android:textColor="@color/textColorDistanceSearch"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/distanceLableTv"
+            app:layout_constraintStart_toEndOf="@+id/distanceLableTv"
+            app:layout_constraintTop_toTopOf="@+id/distanceLableTv" />
+
+        <TextView
+            android:id="@+id/qualificationLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:text="Qualification"
+            android:textColor="@color/textColorLoginScreen"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/qualificationTV"
+            app:layout_constraintEnd_toStartOf="@+id/qualificationTV"
+            app:layout_constraintTop_toTopOf="@+id/qualificationTV" />
+
+        <TextView
+            android:id="@+id/qualificationTV"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:text="ACMA, ACCA"
+            android:textAlignment="center"
+            android:textColor="@color/textColorDistanceSearch"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/distanceTv1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

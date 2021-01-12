@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/contactDetailTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Add multiple contact details"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/contactOneEd"
+        android:layout_height="@dimen/_35sdp"
+        style="@style/edittext_view_style"
+        android:layout_below="@+id/contactDetailTv"
+        android:digits="@string/number_only"
+        android:hint="@string/enter_mobile_number"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:maxLength="11" />
+
+
+    <EditText
+        android:id="@+id/contactTwoEd"
+        style="@style/edittext_view_style"
+        android:layout_below="@+id/contactOneEd"
+        android:layout_marginTop="1dp"
+        android:digits="@string/number_only"
+        android:hint="Enter another mobile number (optional)"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:maxLength="11" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        style="@style/button_style"
+        android:layout_below="@+id/contactTwoEd"
+        android:layout_marginTop="5dp"
+        android:text="@string/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

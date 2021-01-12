@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/topIv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/group3" />
+
+            <ImageView
+                android:id="@+id/backIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:padding="@dimen/_10sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <ImageView
+                android:id="@+id/logoIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backIv"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/parent_student_guardian" />
+
+            <com.example.tutorsapp.ui.customview.TimeLineCustomView
+                app:layout_constraintTop_toBottomOf="@+id/logoIv"
+                app:layout_constraintStart_toStartOf="@+id/bankAccountRl"
+                app:layout_constraintEnd_toEndOf="@+id/bankAccountRl"
+                android:id="@+id/timelineLayout"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                app:fill_percent="3"
+                app:fill_text_color="@color/whiteColor"
+                app:fill_circle_bg="@drawable/green_circle" />
+
+
+            <TextView
+                android:id="@+id/accountDetailsTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/account_details"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timelineLayout" />
+
+
+            <TextView
+                android:id="@+id/addAccountTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/add_account_details"
+                android:textAlignment="center"
+                android:textColor="@color/textColorLoginScreen"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accountDetailsTv" />
+
+
+            <RelativeLayout
+                android:id="@+id/bankAccountRl"
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addAccountTv">
+
+                <Spinner
+                    android:id="@+id/accountTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bankNameRl"
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bankAccountRl">
+
+                <Spinner
+                    android:id="@+id/bankNamesSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+            <!--
+                        <TextView
+                            android:id="@+id/bankAccountTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:background="@drawable/rectangle_shape"
+                            android:hint="@string/bank_account"
+                            android:inputType="number"
+                            android:padding="@dimen/_10sdp"
+                            android:paddingStart="@dimen/_20sdp"
+                            android:paddingEnd="@dimen/_20sdp"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/addAccountTv" />
+            -->
+            <EditText
+                android:id="@+id/accountTitleTv"
+                style="@style/edittext_view_style"
+                android:hint="@string/account_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bankNameRl"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:maxLength="30" />
+
+            <EditText
+                android:id="@+id/accountNumberTv"
+                style="@style/edittext_view_style"
+                android:hint="@string/account_number"
+                android:inputType="number"
+                android:imeOptions="actionNext"
+                android:digits="@string/number_only"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accountTitleTv" />
+
+            <EditText
+                android:id="@+id/branchCodeTv"
+                style="@style/edittext_view_style"
+                android:layout_marginTop="12dp"
+                android:hint="@string/branch_code"
+                android:inputType="number"
+                android:imeOptions="actionDone"
+                android:digits="@string/number_only"
+                android:maxLength="5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accountNumberTv" />
+
+
+            <RelativeLayout
+                android:id="@+id/cityRl"
+                style="@style/spinner_rl_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/branchCodeTv">
+
+                <Spinner
+                    android:id="@+id/citySp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:prompt="@string/bank_account"
+                    android:spinnerMode="dropdown"
+                    android:textSize="@dimen/_10ssp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/saveChangesBtn"
+                style="@style/button_style"
+                android:text="@string/save_Changes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityRl" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/holo_brwn_circle" />
+    <item
+        android:bottom="@dimen/_5sdp"
+        android:drawable="@drawable/ic_close"
+        android:end="@dimen/_5sdp"
+        android:gravity="end|right"
+        android:top="@dimen/_5sdp" />
+</layer-list>

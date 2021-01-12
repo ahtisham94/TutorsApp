@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/academyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/facilities_offered"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/classRoomsLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/class_room"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/classRoomRl"
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <Spinner
+                    android:id="@+id/classRommSp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/noOfRoomsLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/no_rooms"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/nosRoomEd"
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <Spinner
+                    android:id="@+id/noOfRoomsSp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/facalityLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/faculty"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/facalityRl"
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <Spinner
+                    android:id="@+id/facalitySp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/teacherStudyRatioLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/teacher_to_student_ratio"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <Spinner
+                    android:id="@+id/teacherStudentRadioSp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/libortiryLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/laboratories"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <Spinner
+                    android:id="@+id/liboratorySp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/parkingAreaLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/parking_area"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <Spinner
+                    android:id="@+id/parkingSP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/libraryLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/library"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <Spinner
+                    android:id="@+id/librarySp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/securityGuardLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/security_level"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/spinner_type_bg"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:id="@+id/securityGuradTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_security_level"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_35sdp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/canteenLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/canteen_cafeteria"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <Spinner
+                    android:id="@+id/canteenSp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/examsLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/exams"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/spinner_type_bg"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:id="@+id/examsTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_exams_types"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_35sdp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/specialFeaturesLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@string/special_feature"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                style="@style/spinner_rl_style"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/spinner_type_bg"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:id="@+id/specialFeatureTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_special_features"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_35sdp" />
+
+                <!--                <Spinner-->
+                <!--                    android:id="@+id/specialFeatureSp"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent" />-->
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/saveBtn"
+                style="@style/button_style"
+                android:layout_marginTop="10dp"
+                android:text="@string/save" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BookShopInformationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="33dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/topIv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/group3" />
+
+            <ImageView
+                android:id="@+id/backIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:contentDescription="@string/icon"
+                android:padding="@dimen/_10sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <ImageView
+                android:id="@+id/logoIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:scaleType="centerInside"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backIv"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/parent_student_guardian" />
+
+            <com.example.tutorsapp.ui.customview.TimeLineCustomView
+                android:id="@+id/timelineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:fill_circle_bg="@drawable/green_circle"
+                app:fill_percent="2"
+                app:fill_text_color="@color/whiteColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoIv" />
+
+            <TextView
+                android:id="@+id/headingTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/book_shop_information"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timelineLayout" />
+
+            <RelativeLayout
+                android:id="@+id/dealRl"
+                style="@style/spinner_rl_style"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headingTv">
+
+                <Spinner
+                    android:id="@+id/dealSp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/shopNameEt"
+                style="@style/edittext_view_style"
+                android:hint="@string/your_shop_name"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dealRl" />
+
+            <TextView
+                android:id="@+id/shopLogo"
+                style="@style/edittext_view_style"
+                android:drawableEnd="@drawable/ic_add_photo"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/logo_of_shop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shopNameEt" />
+
+            <TextView
+                android:id="@+id/shopPic"
+                style="@style/edittext_view_style"
+                android:drawableEnd="@drawable/ic_add_photo"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/picture_of_shop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shopLogo" />
+
+            <TextView
+                android:id="@+id/shopLocation"
+                style="@style/edittext_view_style"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/add_your_shop_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shopPic" />
+
+            <EditText
+                android:id="@+id/shopAddressEt"
+                style="@style/edittext_view_style"
+                android:hint="@string/shop_address"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shopLocation" />
+
+            <TextView
+                android:id="@+id/shopTimingsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/shop_timings"
+                android:textColor="#000000"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shopAddressEt" />
+
+
+            <TextView
+                android:id="@+id/fromTv"
+                style="@style/text_view_style"
+                android:layout_width="@dimen/_115sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableEnd="@drawable/ic_timer_icon"
+                android:hint="@string/from"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shopTimingsTv" />
+
+            <TextView
+                android:id="@+id/toTv"
+                style="@style/text_view_style"
+                android:layout_width="@dimen/_115sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableEnd="@drawable/ic_timer_icon"
+                android:hint="@string/to"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shopTimingsTv" />
+
+            <EditText
+                android:id="@+id/contactDetailsEt"
+                style="@style/edittext_view_style"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="0dp"
+                android:digits="@string/number_only"
+                android:hint="@string/contact_details_of_shop"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toTv" />
+
+            <Button
+                android:id="@+id/addMoreBtn"
+                style="@style/button_style"
+                android:text="@string/add_more_shop_details"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactDetailsEt" />
+
+            <Button
+                android:id="@+id/saveBtn"
+                style="@style/button_style"
+                android:text="@string/save_Changes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addMoreBtn" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

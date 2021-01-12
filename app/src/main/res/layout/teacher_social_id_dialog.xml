@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+
+    <TextView
+        android:id="@+id/socialIdTv"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Add User socail ID"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/socialMediaIdRL"
+        style="@style/spinner_rl_style"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/socialIdTv">
+
+        <Spinner
+            android:id="@+id/socialMediaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/enterIdEd"
+        style="@style/edittext_view_style"
+        android:hint="Enter your Social Id"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:maxLength="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/socialMediaIdRL" />
+
+    <EditText
+        android:id="@+id/otherMediaTypeEd"
+        style="@style/edittext_view_style"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLength="20"
+        android:hint="enter other social media account name"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterIdEd" />
+    <TextView
+        android:id="@+id/doneTv"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="@dimen/_14ssp"
+        android:text="@string/done"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/otherMediaTypeEd"
+        app:layout_constraintEnd_toEndOf="@+id/otherMediaTypeEd"/>
+
+    <View
+
+        app:layout_constraintTop_toBottomOf="@+id/doneTv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10sdp"/>
+    <View
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="@dimen/_10sdp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

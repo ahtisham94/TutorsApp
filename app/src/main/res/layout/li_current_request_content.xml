@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvDAndT"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_8ssp"
+        android:background="@drawable/border_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tvAssign"
+        app:layout_constraintHorizontal_weight="3.5"/>
+
+    <TextView
+        android:id="@+id/tvAssign"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:text="@string/assignment_text"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_9ssp"
+        android:background="@drawable/border_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvDAndT"
+        app:layout_constraintRight_toLeftOf="@+id/tvShowDetails"
+        app:layout_constraintHorizontal_weight="2.5"/>
+
+    <TextView
+        android:id="@+id/tvShowDetails"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:text="@string/show_details_text"
+        android:gravity="center"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_9ssp"
+        android:background="@drawable/border_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvAssign"
+        app:layout_constraintRight_toRightOf="@+id/tvStatus"
+        app:layout_constraintHorizontal_weight="2.5"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:text="@string/status_text"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_9ssp"
+        android:background="@drawable/border_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvShowDetails"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_weight="2.5"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TimeLineCustomView">
+        <attr name="fill_percent" format="integer" />
+        <attr name="fill_circle_bg" format="reference" />
+        <attr name="fill_text_color" format="color"/>
+    </declare-styleable>
+</resources>

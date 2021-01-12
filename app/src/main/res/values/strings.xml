@@ -1,0 +1,751 @@
+<resources>
+    <string name="app_name">Tutors</string>
+
+    <string name="welcome_professional_tutor">Welcome \n Professional Tutor</string>
+    <string name="login_your_account">Log in your account</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="moblie_number">Mobile Number</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="password">Password</string>
+    <string name="welcome_user">Welcome User!</string>
+    <string name="verify">Verify</string>
+    <string name="teacher">Teacher</string>
+    <string name="book_shops">Book Shops</string>
+    <string name="quran_teacher">Quran Teacher</string>
+    <string name="academy_institution">Academy \n Institution</string>
+    <string name="user_account">User Account</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">Login</string>
+    <string name="new_to_this_app">New To This App...</string>
+    <string name="sigmup"> Sign Up</string>
+    <string name="or">Or</string>
+    <string name="professional_tutor">Professional Tutor</string>
+    <string name="professional_home_tutor">Professional Home Tutor</string>
+    <string name="to_get_access_to_biggest_">To get access to biggest platform of \n Home online tuition, academy institution \n We need little information to get start</string>
+    <string name="you_are">You are</string>
+    <string name="full_name">Full Name</string>
+    <string name="upload_your_picture">Upload Your Picture</string>
+    <string name="age_as_per_cnic">Date of birth</string>
+    <string name="gender">Gender</string>
+    <string name="city">City</string>
+    <string name="add_account_details">Add Account Details</string>
+    <string name="contact_details">Alternative Contact Details</string>
+    <string name="add_current_location_for_distance_reverence">Add Current Location For Distance Reference</string>
+    <string name="add_location_distance_reference">Add Location (Distance Reverence)</string>
+    <string name="save_Changes">Save Changes</string>
+    <string name="save">Save</string>
+    <string name="student_parent_forum">Student Parent Forum</string>
+    <string name="search_result_teacher">Search result teacher</string>
+    <string name="student_name">Student Name</string>
+    <string name="online_home_tutor_institition_">Online Home Tutor Institition / Academy</string>
+    <string name="level_and_subject">level And Subject</string>
+    <string name="add_more_subjects">Add More Subjects</string>
+    <string name="teacher_required_for">Teacher Required For</string>
+    <string name="select_city">Select City</string>
+    <string name="mobile_phone">Mobile Phone</string>
+
+    <string name="no_of_days_in_week">No of Days In Week</string>
+    <string name="teaching_time">Teaching Time</string>
+    <string name="tentative_month_tuition_required">Tentative Month Tuition Required</string>
+    <string name="fee_range">Fee Range</string>
+    <string name="search">Search</string>
+    <string name="search_tutor_here">Search Tutor here...</string>
+    <string name="what_categories_do_your">What categories your institution teaches?</string>
+    <string name="icon">icon</string>
+    <string name="fee">Fee</string>
+    <string name="qualification">Qualification</string>
+    <string name="distance">Distance</string>
+    <string name="address">Address</string>
+    <string name="course">Course</string>
+    <string name="skip">Skip</string>
+    <string name="proceed">Proceed</string>
+    <string name="instition_academy_nearby_you">Instition / Academy Nearby You Conducting Your Subject Class</string>
+    <string name="academy_institution_nearby_you">Academy / Instition / School Nearby You </string>
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
+    <string name="search_by_city">Search By City</string>
+    <string name="search_by_subject">Search By Subject</string>
+    <string name="home">Home</string>
+    <string name="tutor">Tutor</string>
+    <string name="branch_code">Branch Code</string>
+    <string name="account_number">Account Number</string>
+    <string name="account_title">Account Title</string>
+    <string name="favorite">Favorite</string>
+    <string name="account_details">Bank/Mobile Account Details</string>
+    <string name="bank_account">Bank Account</string>
+    <string name="bank_type">Bank Type</string>
+    <string name="add_your_requirement">Add Your Requirement</string>
+    <string name="add_your_requirement2">Add Your Requirement...</string>
+    <string name="chat">Chat</string>
+    <string name="profile">Profile</string>
+    <string name="educational_details">Educational Details</string>
+    <string name="add_from_lower_level">Add From Lower Level</string>
+    <string name="upload_cnic_back">Upload CNIC back</string>
+    <string name="upload_your_final_degree_certificate">Upload Your Final Degree Certificate</string>
+    <string name="what_category_do_you_teach">What Category Do You Teach?</string>
+    <string name="experience">Experience</string>
+    <string name="teaching_mode">Teaching Mode</string>
+    <string name="online_id">Online Id (Skype, zoom...)</string>
+    <string name="no_record_found">No Record Found</string>
+    <string name="availability_status">Availability Status</string>
+    <string name="add_availability_status">Add Availability Status</string>
+    <string name="availability_in_week">Availability in Week</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="full_time_teacher">Full Time Teacher</string>
+    <string name="part_time_teacher">Part Time Teacher</string>
+    <string name="current_employment">Current Employment</string>
+    <string name="per_hour_fee">Per Hour Fee</string>
+    <string name="per_month_fee">Per Month Fee</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="preferred_area_you_want_to_teach">Preferred Area You Want To Teach</string>
+    <string name="set_your_point_of_reference">Set Your Point of Reference</string>
+    <string name="update_your_availability_status">Available time in day</string>
+    <string name="available_time">Available Time</string>
+    <string name="occupied">Occupied</string>
+    <string name="available">Available</string>
+    <string name="select_time">Select Time</string>
+    <string name="text_user">User</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="description_icon">icon</string>
+
+    <string name="edit_your_profile">Add Your Profile</string>
+    <string name="owner_of_acadeny_details">Academy owner Personal information</string>
+    <string name="profile_completion">Profile Completion</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="city_of_work">City Of Work</string>
+    <string name="current_address">Current Address</string>
+    <string name="permanent_address">Parmanent Address (As Per CNIC)</string>
+    <string name="upload_cnic_front">Upload CNIC Front</string>
+
+
+    <string name="time0">7:00am-8:00am</string>
+    <string name="time1">8:00am-9:00am</string>
+    <string name="time2">9:00am-10:00am</string>
+    <string name="time3">10:00am-11:00am</string>
+    <string name="time4">11:00am-12:00pm</string>
+    <string name="time5">12:00am-1:00pm</string>
+    <string name="time6">1:00pm-2:00pm</string>
+    <string name="time7">2:00pm-3:00pm</string>
+    <string name="time8">3:00pm-4:00pm</string>
+    <string name="time9">4:00pm-5:00pm</string>
+    <string name="time10">5:00pm-6:00pm</string>
+    <string name="time11">6:00pm-7:00pm</string>
+    <string name="time12">7:00pm-8:00pm</string>
+    <string name="time13">8:00pm-9:00pm</string>
+    <string name="time14">9:00pm-10:00pm</string>
+    <string name="time15">10:00pm-11:00pm</string>
+
+
+    <string-array name="you_are_spinner_items">
+        <item>Teacher</item>
+        <item>Student</item>
+        <item>Guardian</item>
+        <item>Reference</item>
+    </string-array>
+    <string-array name="teacher_required_for_spinner_items">
+        <item>Group of Students</item>
+        <item>Single Student</item>
+    </string-array>
+
+    <string-array name="school_college_university_spinner_items">
+        <item>School</item>
+        <item>College</item>
+        <item>University</item>
+        <item>Institute</item>
+        <item>Grade</item>
+        <item>Other than</item>
+    </string-array>
+
+    <string-array name="teacher_education_spinner">
+        <item>Educational Certificate</item>
+        <item>Matric/ O Level</item>
+        <item>Intermediate</item>
+        <item>Graduation</item>
+        <item>Institute</item>
+        <item>Master</item>
+        <item>Post Graduation</item>
+        <item>PhD</item>
+        <item>Language specialist</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="current_employment_spinner_items">
+        <item>Current Employment</item>
+        <item>Govt employee</item>
+        <item>Private sector</item>
+        <item>Teacher/lecturer Govt</item>
+        <item>Full time private teacher</item>
+    </string-array>
+
+    <integer-array name="img_id_arr">
+        <item>@drawable/splash_image1</item>
+        <item>@drawable/splash_image2</item>
+        <item>@drawable/splash_image3</item>
+        <item>@drawable/splash_image4</item>
+    </integer-array>
+
+    <string-array name="account_type_arr">
+        <item>Bank Account</item>
+        <item>Mobile  Account</item>
+    </string-array>
+
+    <string-array name="banks_name_arr">
+        <item>AlBaraka Bank</item>
+        <item>Meezan Bank</item>
+        <item>Dubai Islamic Bank</item>
+        <item>Silk Bank</item>
+        <item>Summit Bank</item>
+        <item>JS Bank</item>
+        <item>Bank Alfalah</item>
+        <item>Network Micro Finance Bank</item>
+        <item>Soneri Bank</item>
+        <item>First Credit &amp; Discount Corp Limited</item>
+        <item>NIB Bank</item>
+        <item>Habib Bank</item>
+        <item>MCB Bank Limited</item>
+        <item>KASB Bank</item>
+        <item>Escorts Investment Bank Limited</item>
+        <item>HSBC</item>
+        <item>Habib Metropolitan Bank</item>
+        <item>SME Bank</item>
+        <item>Faysal Bank</item>
+        <item>United Bank</item>
+        <item>Barclays Bank</item>
+        <item>Kashf Foundation Limited</item>
+        <item>Bank AL Habib</item>
+        <item>Samba Bank, Karachi</item>
+        <item>Allied Bank of Pakistan, Karachi</item>
+        <item>Saudi Pak Industrial and Agricultural Investment Company (Pvt) Limited, Islamabad</item>
+        <item>Trust Investment Bank Limited</item>
+        <item>Punjab Provincial Cooperative Bank</item>
+        <item>The First Micro Finance Bank Limited</item>
+        <item>The Bank of Punjab</item>
+        <item>National Discounting Services Limited</item>
+        <item>First Women Bank Limited</item>
+        <item>Al-Towfeek Investment Bank</item>
+    </string-array>
+
+    <string-array name="servi_providers">
+        <item>Telenor</item>
+        <item>Ufone</item>
+        <item>Jazz/Warid</item>
+        <item>Zong</item>
+    </string-array>
+
+    <string-array name="city_names">
+        <item>City</item>
+        <item>Islamabd</item>
+        <item>Lahore</item>
+        <item>Multan</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="deal">
+        <item>You deal in</item>
+        <item>New book</item>
+        <item>Book &amp; stationary</item>
+        <item>New book, old book &amp; stationary</item>
+    </string-array>
+
+    <string-array name="city">
+        <item>Select City</item>
+        <item>Islamabad</item>
+        <item>Rawalpindi</item>
+        <item>Lahore</item>
+        <item>Multan</item>
+    </string-array>
+
+    <string-array name="sortSp">
+        <item>Sort</item>
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+
+    <string-array name="hafize_Quran_Spinner">
+        <item>Hafiz a Quran</item>
+        <item>MA Islamiate</item>
+        <item>Qari</item>
+    </string-array>
+
+    <string-array name="teachingModeSpinner">
+        <item>Teaching Mode</item>
+        <item>Online Teacher</item>
+        <item>Home Teacher</item>
+        <item>academy/institution</item>
+        <item>School/College</item>
+        <item>university</item>
+    </string-array>
+
+    <string-array name="mapRadiusLOV">
+        <item>5 Km</item>
+        <item>6 Km</item>
+        <item>7 Km</item>
+        <item>8 Km</item>
+        <item>9 Km</item>
+    </string-array>
+
+    <string-array name="distanceMeasureSpinner">
+        <item> Meters (m) </item>
+        <item> Kilo Meters (km) </item>
+        <item> Feet (ft) </item>
+        <item> Yard (yd) </item>
+        <item> Mile (mi) </item>
+    </string-array>
+
+    <string-array name="educationSpinner">
+        <item> Level </item>
+        <item> 10th </item>
+        <item> Intermediate level </item>
+        <item> Graduation level </item>
+        <item> Master level </item>
+        <item> Post Graduation </item>
+        <item> PhD level </item>
+        <item> Professional level </item>
+        <item> Language specialist </item>
+        <item> Other </item>
+    </string-array>
+
+    <string-array name="gradeSpinner">
+        <item> Grades </item>
+        <item> A </item>
+        <item> B </item>
+        <item> C </item>
+        <item> D </item>
+        <item> GPA 2 to 3 </item>
+        <item> GPA 3 to 4 </item>
+        <item> GPA 4 to 5 </item>
+    </string-array>
+
+    <string-array name="youHaving">
+        <item> Full subject notes </item>
+        <item> Full subject lecture </item>
+        <item> Subject exam kit </item>
+        <item> Topic few topics </item>
+        <item> 1&amp;2 both </item>
+    </string-array>
+
+    <string-array name="degree10thSpinner">
+        <item> Degree Name </item>
+        <item> Matric </item>
+        <item>  O level </item>
+    </string-array>
+
+    <string-array name="degree11thSpinner">
+        <item> Degree Name </item>
+        <item> F.Sc </item>
+        <item> AS level </item>
+        <item> O level </item>
+        <item> I.com </item>
+        <item> ICS </item>
+    </string-array>
+
+    <string-array name="degreeGraducationthSpinner">
+        <item> Degree Name </item>
+        <item> Information Technology </item>
+        <item> BBA</item>
+        <item> Bachelors </item>
+    </string-array>
+
+    <string-array name="range_bar_per_hour">
+        <item>500</item>
+        <item>600</item>
+        <item>700</item>
+        <item>800</item>
+        <item>900</item>
+        <item>1000</item>
+        <item>1100</item>
+        <item>1200</item>
+        <item>1300</item>
+        <item>1400</item>
+        <item>1500</item>
+    </string-array>
+
+    <string-array name="connecting_colors">
+        <item>#B5AC97</item>
+        <item>#B5AC97</item>
+        <item>#B5AC97</item>
+        <item>#B5AC97</item>
+    </string-array>
+    <string-array name="areaMeasureSpinner">
+        <item> Meters </item>
+        <item> Kilo Meters </item>
+        <item>Acre (ac)</item>
+        <item> Hectare (ha) </item>
+        <item>Square meters (m^2)</item>
+        <item>Square kilometers(km^2)</item>
+        <item> Square Yard (yd^2) </item>
+        <item> Square Feet (ft^2) </item>
+        <item> Square miles (ml^2) </item>
+    </string-array>
+
+    <string-array name="time_slot">
+        <item name="time0">7:00am-8:00am</item>
+        <item name="time1">8:00am-9:00am</item>
+        <item name="time2">9:00am-10:00am</item>
+        <item name="time3">10:00am-11:00am</item>
+        <item name="time4">11:00am-12:00pm</item>
+        <item name="time5">12:00am-1:00pm</item>
+        <item name="time6">1:00pm-2:00pm</item>
+        <item name="time7">2:00pm-3:00pm</item>
+        <item name="time8">3:00pm-4:00pm</item>
+        <item name="time9">4:00pm-5:00pm</item>
+        <item name="time10">5:00pm-6:00pm</item>
+        <item name="time11">6:00pm-7:00pm</item>
+        <item name="time12">7:00pm-8:00pm</item>
+        <item name="time13">8:00pm-9:00pm</item>
+        <item name="time14">9:00pm-10:00pm</item>
+        <item name="time15">10:00pm-11:00pm</item>
+    </string-array>
+
+    <string-array name="travelModeArray">
+        <item>Mode of convince</item>
+        <item>Moter Cycle</item>
+        <item>Car</item>
+        <item>Pick &amp; Drop</item>
+    </string-array>
+
+
+    <string-array name="areaArray">
+        <item>I-9 Islamabad</item>
+        <item>I-8 Islamabad</item>
+        <item>I-10 Islamabad</item>
+    </string-array>
+
+
+    <string-array name="acedemyArray">
+        <item>Academy</item>
+        <item>Institution</item>
+        <item>School</item>
+        <item>College</item>
+        <item>Home Base Academy Setup</item>
+    </string-array>
+
+
+    <string-array name="socialMediaArra">
+        <item>Select Media Account</item>
+        <item>Skype</item>
+        <item>Zoom</item>
+        <item>Google Meetings</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="compLabArray">
+        <item>Computer labs</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="noOfRoomsArray">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="libArray">
+        <item>Library </item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="parkAreaArray">
+        <item>Parking area </item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="testSessionArray">
+        <item>Weekly Test sessions</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="academiesArray">
+        <item>Academy 1</item>
+        <item>Academy 2</item>
+        <item>Academy 3</item>
+    </string-array>
+
+    <string-array name="saveEnvArray">
+        <item>Safe environment</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="commEnvArray">
+        <item>Community environment</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="dedicatedProfEnvArray">
+        <item>Dedicated and professional teacher</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="notesSubArray">
+        <item>Notes form subject specialist</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="securityGuardArray">
+        <item>Security Guard</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="scheduleArray">
+        <item>Current schedule</item>
+        <item>Coming session schedule</item>
+
+    </string-array>
+
+
+    <string-array name="acedemyFeaturesArray">
+        <item>Academy</item>
+        <item>Institution</item>
+        <item>School</item>
+        <item>College</item>
+        <item>Home Base Academy Setup</item>
+    </string-array>
+    <string-array name="institutedTypeArray">
+        <item>School</item>
+        <item>College</item>
+        <item>University</item>
+    </string-array>
+
+    <string-array name="days_arr">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Firday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <string-array name="book_shop_list">
+        <item>Book shop list</item>
+        <item>Ilmi book shop Islamabad</item>
+        <item>Ilmi book shop Lahore</item>
+    </string-array>
+
+    <string-array name="min_time_withincity_spinner">
+        <item>min time</item>
+        <item>1 day</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>5 days</item>
+        <item>6 days</item>
+        <item>7 days</item>
+    </string-array>
+    <string-array name="max_time_withincity_spinner">
+        <item>max time</item>
+        <item>1 day</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>5 days</item>
+        <item>6 days</item>
+        <item>7 days</item>
+    </string-array>
+
+    <string name="meters_text">m</string>
+    <string name="kiloMeters_text">km</string>
+    <string name="feet_text">ft</string>
+    <string name="yard_text">yd</string>
+    <string name="mile_text">mi</string>
+    <string name="acre_text">ac</string>
+    <string name="hectare_text">ha</string>
+    <string name="squareMeters_text">m^2</string>
+    <string name="squareYard_text">yd^2</string>
+    <string name="squareMiles_text">ml^2</string>
+    <string name="select_option">Select Option</string>
+    <string name="gallery">Gallery</string>
+    <string name="capture_photo">Capture Photo</string>
+    <string name="welcome_user_as_part_of_our_team">Welcome User \n As Part Of Our Team</string>
+    <string name="you_successfully_regestered">You successfully regedtered as a professional \n teacher to get online access to \n our online home/tuition</string>
+    <string name="please_pay_500">Please Pay \n 500 Regestertion Fee</string>
+    <string name="please_pay_mode_of_payment">Please pay mode of payment</string>
+    <string name="contact_us_for_activation">Contact With \n Us For Activation</string>
+    <string name="uan">UAN</string>
+    <string name="uan_number">+92 555 555 555</string>
+    <string name="whats_app">What\'s app</string>
+    <string name="whatsap_number">+92 333 333 333</string>
+    <string name="email">Email</string>
+    <string name="email_address">info@professionaltuts.com</string>
+    <string name="call">Call</string>
+    <string name="call_number">+92 555 555 555</string>
+    <string name="teacher_registration_code">Teacher Registration Code</string>
+    <string name="system_will_send_one_time_code_as">System will send one time code as</string>
+    <string name="dummy_teacher_code">10025/25/05/20</string>
+    <string name="rememver_this_code_for_reference">Remember this code for reference</string>
+    <string name="upload_your_degree">Upload Your Final Degree</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="is_it_your_final_degree">Is it your final degree?</string>
+    <string name="total_marks">Total Marks</string>
+    <string name="obtained_marks">Obtained Marks</string>
+    <string name="school_college_university">School / College / University</string>
+    <string name="school_college_university_aca">School / College / University / Academy</string>
+    <string name="duration">Duration</string>
+    <string name="year">Year</string>
+    <string name="add_experience">Add Experience</string>
+    <string name="tuition_assignment_request">Tuition Assignment Request</string>
+    <string name="assignment_1">Assignment 1</string>
+    <string name="group_of_student">Group of student</string>
+    <string name="_2_students">2 Students</string>
+    <string name="roots_millinium_school">Roots Millinium School</string>
+    <string name="school">School</string>
+    <string name="level">Level</string>
+    <string name="o_level">O Level</string>
+    <string name="subjects">Subjects</string>
+    <string name="teacher_required">Teacher Required</string>
+    <string name="male">Male</string>
+    <string name="_10_km">10 KM</string>
+    <string name="days_in_week">Days in week</string>
+    <string name="location">Location</string>
+    <string name="fee_tentative">Fee Tentative</string>
+    <string name="mode">Mode</string>
+    <string name="accept">Accept</string>
+    <string name="fee_finalize">Fee Finalize</string>
+    <string name="reject_by_parent">Reject By Parent</string>
+    <string name="fee_collected">Fee Collected</string>
+    <string name="demo">Demo</string>
+    <string name="decline_not_instersted">Decline / Not Instersted</string>
+    <string name="assignment_code">Assignment Code</string>
+    <string name="code">Code</string>
+    <string name="payment">Payment</string>
+    <string name="remarks_status">Remarks / Status</string>
+    <string name="date">Date</string>
+    <string name="canceled_assignment">Cancelled Assignment</string>
+    <string name="wallet">Wallet</string>
+    <string name="debit_pending">Debit / Pending</string>
+    <string name="credit">Credit</string>
+    <string name="students_nearby_you">Students Nearby You</string>
+    <string name="institution_academy_nearby_you_conducting_your_subject_class">Institution/ Academy Nearby You Conducting Your Subject Class</string>
+    <string name="academy_information">Academy Information</string>
+    <string name="name_of_institution">Name of Institution</string>
+    <string name="upload_academy_institution_photo">Upload Academy Logo</string>
+    <string name="done">Done</string>
+    <string name="add_more">Add More</string>
+    <string name="add">Add</string>
+    <string name="add_education">Add Your Education</string>
+    <string name="institute_school_college">Institute /school/college</string>
+    <string name="university_board_city">University/board /city</string>
+    <string name="grade">Grade</string>
+    <string name="degree_name">Degree Name</string>
+    <string name="education">Education</string>
+    <string name="add_location">Add Location</string>
+    <string name="date_amp_time_text"><![CDATA[Date & time]]></string>
+    <string name="assignment_text">Assignment</string>
+    <string name="show_details_text">Show Details</string>
+    <string name="status_text">Status</string>
+    <string name="share_details_text">Share Details</string>
+    <string name="skill_note_text"><![CDATA[If you have complete lecture of subject & note. Share with us and earn handsome amount.]]></string>
+    <string name="share_your_skills_text">Share your skills</string>
+    <string name="curr_assign_head_text">Current Assignment request from parent and student</string>
+    <string name="add_details_text">Add Details</string>
+    <string name="from_text">From</string>
+    <string name="number_only">0123456789</string>
+    <string name="alphabets_only">qwertysuiopadfghjklmnbvcxzQWERTYUIOPLKJHGFDSAZXCVBNM</string>
+    <string name="select_available_time_slots">Select available time slots</string>
+    <string name="institute_type">Institute Type</string>
+    <string name="add_your_academy_location">Add Your Academy Location</string>
+    <string name="categories_you_teach_with_schedule">category of subjects you can teach?</string>
+    <string name="our_webiste_link">I acknowledge that I have read and agreed the <b><u>term &amp; condition, privacy policy </u></b> </string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="contact_details_">Contact Details</string>
+    <string name="classes_environment">Classes Environment</string>
+    <string name="no_s_of_rooms">No\'s of rooms</string>
+    <string name="schedule">Schedule</string>
+    <string name="facality_details">Faculity Details</string>
+    <string name="add_your_scedule">Add Your Schedule</string>
+    <string name="enter_cource_name">Enter cource name</string>
+    <string name="online_class">Online Class</string>
+    <string name="venue_if_course_is_schedule_at_someplace">Venue,If course is schedule at someplace</string>
+    <string name="teacher_name">Teacher Name</string>
+    <string name="upload_teacher_picture">Upload teacher picture</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+    <string name="no_s_of_classes_in_week">No\'s of classes in week</string>
+    <string name="fee_subject">Fee/Subject</string>
+    <string name="enter_teacher_name">Enter teacher name</string>
+    <string name="enter_your_achievements">Enter your achievements</string>
+    <string name="enter_subject_names">Enter Subject Names</string>
+    <string name="facilities_offered">Facilities offered</string>
+    <string name="class_room">Class Room</string>
+    <string name="no_rooms">No of Rooms</string>
+    <string name="faculty">Faculty</string>
+    <string name="teacher_to_student_ratio">Teacher to Student ratio</string>
+    <string name="laboratories">Laboratories</string>
+    <string name="parking_area">Parking Area</string>
+    <string name="library">Library</string>
+    <string name="security_level">Security level</string>
+    <string name="canteen_cafeteria">Canteen/Cafeteria</string>
+    <string name="exams">Exams</string>
+    <string name="special_feature">Special feature</string>
+    <string name="select_special_features">Select special features</string>
+    <string name="academy_institution_schedule_s_n_faculty_information"><![CDATA[Academy/institution schedule\'s \n & faculty information]]></string>
+    <string name="enter_your_level">Enter your level</string>
+    <string name="enter_your_subject">Enter your Subject</string>
+    <string name="enter_your_qualification">Enter your qualification</string>
+    <string name="select_security_level">Select security level</string>
+    <string name="select_exams_types">Select exams types</string>
+    <string name="enter_email">Enter email address</string>
+    <string name="owner_of_book_shop_information">Owner of book shop information</string>
+    <string name="enter_your_name">Enter your Name</string>
+    <string name="enter_cnic_number">Enter CNIC number</string>
+    <string name="enter_contact_details">Enter contact details</string>
+    <string name="enter_address_details">Enter address details</string>
+
+    <string name="book_shop_information">Book shop Information</string>
+    <string name="you_deal_in">You deal in</string>
+    <string name="your_shop_name">Your shop name</string>
+    <string name="logo_of_shop">Logo of shop</string>
+    <string name="picture_of_shop">Picture of shop</string>
+    <string name="add_your_shop_location">Add your shop location</string>
+    <string name="shop_address">Shop Address</string>
+    <string name="shop_timings">Shop timings</string>
+    <string name="contact_details_of_shop">Contact details of shop</string>
+    <string name="add_more_shop_details">Add more shop details</string>
+
+
+    <string name="store_items">Store items</string>
+    <string name="new_books_categories">Categories of new books</string>
+    <string name="old_books_categories">Categories of old books</string>
+    <string name="stationery_items">Stationery items</string>
+    <string name="shop_branches_details">Add more shop Branches details</string>
+    <string name="within_city_delivery_time">Within city delivery time</string>
+    <string name="home_delivery">Home Delivery</string>
+    <string name="intercity_delivery_time">Intercity delivery time</string>
+    <string name="preferred_payment_method">Preferred payment method</string>
+    <string name="cod">COD</string>
+    <string name="advance">Advance</string>
+    <string name="delivery_charges">Delivery Charges</string>
+    <string name="mode_of_payment">Mode of payment</string>
+    <string name="easy_paisa">Easy paisa</string>
+    <string name="jazz_cash">Jazz cash</string>
+    <string name="bank_transfer">Bank transfer</string>
+    <string name="uniform_text">Uniforms</string>
+    <string name="logout">Logout</string>
+    >>>>>>> ac4f376523b6c9a78cb539c6a3595397103bf28e
+</resources>

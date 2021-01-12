@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.EditProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="33dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/topIv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/group3" />
+
+            <ImageView
+                android:id="@+id/backIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:contentDescription="@string/icon"
+                android:padding="@dimen/_10sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <ImageView
+                android:id="@+id/logoIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:scaleType="centerInside"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backIv"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/parent_student_guardian" />
+
+            <com.example.tutorsapp.ui.customview.TimeLineCustomView
+                android:id="@+id/timelineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:fill_circle_bg="@drawable/green_circle"
+                app:fill_percent="1"
+                app:fill_text_color="@color/whiteColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoIv" />
+
+
+            <TextView
+                android:id="@+id/headingTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/edit_your_profile"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timelineLayout" />
+
+            <TextView
+                android:id="@+id/addAvailabilityStatusTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/profile_completion"
+                android:textAlignment="center"
+                android:textColor="@color/textColorLoginScreen"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headingTv" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@string/icon"
+                android:padding="@dimen/_10sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/men"
+                app:civ_border_color="#5C5C5C"
+                app:civ_border_width="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addAvailabilityStatusTv" />
+
+            <ImageView
+                android:id="@+id/editProfileImageIv"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/green_dot"
+                android:contentDescription="@string/icon"
+                android:padding="@dimen/_2sdp"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+                app:layout_constraintEnd_toEndOf="@+id/profile_image"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <EditText
+                android:id="@+id/firstNameEt"
+                style="@style/edittext_view_style"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:digits="@string/alphabets_only"
+                android:hint="@string/first_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxLength="25"
+                android:maxLines="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+            <EditText
+                android:id="@+id/lastNameEt"
+                style="@style/edittext_view_style"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:digits="@string/alphabets_only"
+                android:hint="@string/last_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxLength="25"
+                android:maxLines="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+            <TextView
+                android:id="@+id/ageTvEt"
+                style="@style/edittext_view_style"
+                android:background="@drawable/rectangle_shape"
+                android:hint="@string/age_as_per_cnic"
+                app:layout_constraintEnd_toEndOf="@+id/lastNameEt"
+                app:layout_constraintStart_toStartOf="@+id/firstNameEt"
+                app:layout_constraintTop_toBottomOf="@+id/lastNameEt" />
+
+
+            <RelativeLayout
+                android:id="@+id/genderRl"
+                style="@style/spinner_rl_style"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ageTvEt">
+
+                <Spinner
+                    android:id="@+id/genderSp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cityR2"
+                style="@style/spinner_rl_style"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genderRl">
+
+                <Spinner
+                    android:id="@+id/citySp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/cityOfWorkEt"-->
+            <!--                style="@style/edittext_view_style"-->
+            <!--                android:maxLines="1"-->
+            <!--                android:hint="@string/city_of_work"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/genderRl" />-->
+
+            <!--            <com.hbb20.CountryCodePicker-->
+            <!--                android:id="@+id/ccp"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_22sdp"-->
+            <!--                android:layout_marginTop="@dimen/_10sdp"-->
+            <!--                android:background="@drawable/rectangle_shape"-->
+            <!--                android:padding="@dimen/_2sdp"-->
+            <!--                app:ccp_autoDetectLanguage="true"-->
+            <!--                app:ccp_defaultNameCode="PK"-->
+            <!--                app:ccp_hintExampleNumber="true"-->
+            <!--                app:ccp_showNameCode="true"-->
+            <!--                app:ccp_textSize="@dimen/_10ssp"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/cityR2" />-->
+
+            <EditText
+                android:id="@+id/contactDetailsEt"
+                style="@style/edittext_view_style"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="0dp"
+                android:digits="@string/number_only"
+                android:hint="@string/contact_details"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityR2" />
+
+            <EditText
+                android:id="@+id/emailAddress"
+                style="@style/edittext_view_style"
+                android:hint="@string/email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactDetailsEt" />
+
+            <EditText
+                android:id="@+id/currentAddressEt"
+                style="@style/edittext_view_style"
+                android:hint="@string/current_address"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
+
+            <EditText
+                android:id="@+id/parmanentAddressEt"
+                style="@style/edittext_view_style"
+                android:hint="@string/permanent_address"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentAddressEt" />
+
+            <TextView
+                android:id="@+id/cnicFront"
+                style="@style/edittext_view_style"
+                android:drawableEnd="@drawable/cnic_icon"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/upload_cnic_front"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/parmanentAddressEt" />
+
+
+            <TextView
+                android:id="@+id/cnicBack"
+                style="@style/edittext_view_style"
+                android:drawableEnd="@drawable/cnic_icon"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/upload_cnic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cnicFront" />
+
+            <Button
+                android:id="@+id/saveBtn"
+                style="@style/button_style"
+                android:text="@string/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cnicBack" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

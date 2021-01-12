@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/topIv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/group3" />
+
+            <ImageView
+                android:id="@+id/backIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:padding="@dimen/_10sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <ImageView
+                android:id="@+id/logoIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/icon"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backIv"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/parent_student_guardian" />
+
+            <com.example.tutorsapp.ui.customview.TimeLineCustomView
+                android:id="@+id/timelineLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:fill_circle_bg="@drawable/green_circle"
+                app:fill_percent="4"
+                app:fill_text_color="@color/whiteColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoIv" />
+
+            <TextView
+                android:id="@+id/editProfileTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/availability_status"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timelineLayout" />
+
+            <TextView
+                android:id="@+id/profileCompletionTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/update_your_availability_status"
+                android:textAlignment="center"
+                android:textColor="@color/textColorLoginScreen"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editProfileTv" />
+
+
+
+            <TextView
+                android:id="@+id/availabilityInWeekTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/rectangle_shape"
+                android:drawableEnd="@drawable/ic_calender"
+                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/availability_in_week"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileCompletionTv" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/daysSlotFL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone"
+                app:alignContent="stretch"
+                app:alignItems="stretch"
+                app:flexDirection="row"
+                app:flexWrap="wrap"
+                app:layout_constraintEnd_toEndOf="@+id/availabilityInWeekTv"
+                app:layout_constraintStart_toStartOf="@+id/availabilityInWeekTv"
+                app:layout_constraintTop_toBottomOf="@+id/availabilityInWeekTv" />
+
+
+
+
+            <TextView
+                android:id="@+id/selectTimeSlotTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/rectangle_shape"
+                android:drawableEnd="@drawable/ic_calender"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/available_time"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/daysSlotFL" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/timeSlotLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone"
+                app:alignContent="stretch"
+                app:alignItems="stretch"
+                app:flexDirection="row"
+                app:flexWrap="wrap"
+                app:layout_constraintEnd_toEndOf="@+id/selectTimeSlotTv"
+                app:layout_constraintStart_toStartOf="@+id/selectTimeSlotTv"
+                app:layout_constraintTop_toBottomOf="@+id/selectTimeSlotTv">
+
+                <!--                                <RelativeLayout-->
+                <!--                                    android:layout_width="match_parent"-->
+                <!--                                    android:layout_height="wrap_content"-->
+                <!--                                    android:layout_margin="@dimen/_5sdp"-->
+                <!--                                    android:background="@drawable/holo_brwn_circle"-->
+                <!--                                    >-->
+
+                <!--                                    <TextView-->
+                <!--                                        android:layout_width="wrap_content"-->
+                <!--                                        android:layout_height="wrap_content"-->
+                <!--                                        android:layout_centerVertical="true"-->
+                <!--                                        android:paddingStart="@dimen/_10sdp"-->
+                <!--                                        android:text="@string/time12" />-->
+
+                <!--                                    <ImageView-->
+                <!--                                        android:layout_width="wrap_content"-->
+                <!--                                        android:layout_height="wrap_content"-->
+                <!--                                        android:layout_alignParentEnd="true"-->
+                <!--                                        android:layout_centerVertical="true"-->
+                <!--                                        android:layout_marginEnd="@dimen/_10sdp"-->
+                <!--                                        app:srcCompat="@drawable/ic_close" />-->
+                <!--                                </RelativeLayout>-->
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+            <RadioGroup
+                android:id="@+id/fullTimePartTimeRg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/availabilityInWeekTv"
+                app:layout_constraintStart_toStartOf="@+id/availabilityInWeekTv"
+                app:layout_constraintTop_toBottomOf="@+id/timeSlotLL">
+
+                <RadioButton
+                    android:id="@+id/partTimeRb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="@string/part_time_teacher"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RadioButton
+                    android:id="@+id/fullTimeRb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/full_time_teacher"
+                    android:textSize="@dimen/_12ssp" />
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/currentEmploymentRl"
+                style="@style/spinner_rl_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fullTimePartTimeRg">
+
+                <Spinner
+                    android:id="@+id/currentEmploymentSp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/perHourFeeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/rectangle_shape"
+                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:hint="@string/per_hour_fee"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentEmploymentRl" />
+
+            <com.warkiz.tickseekbar.TickSeekBar
+                android:id="@+id/perHourFeeRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tsb_ticks_count="11"
+                app:tsb_thumb_color="@color/colorAccent"
+                app:tsb_thumb_size="16dp"
+                app:tsb_show_tick_marks_type="oval"
+                app:tsb_tick_marks_color="@color/colorAccent"
+                app:tsb_tick_marks_size="7dp"
+                app:tsb_show_tick_texts="below"
+                app:tsb_min="500"
+                app:tsb_max="1500"
+
+                app:tsb_tick_texts_color="@color/colorPrimary"
+                app:tsb_tick_texts_size="10sp"
+                app:tsb_track_background_color="@color/gray_div"
+                app:tsb_track_background_size="2dp"
+                app:tsb_track_progress_color="@color/colorPrimary"
+                app:tsb_track_progress_size="3dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/perHourFeeTv" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/minPerHourFee"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_15sdp"-->
+            <!--                android:layout_marginTop="@dimen/_15sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_15sdp"-->
+            <!--                android:text="1200"-->
+            <!--                android:textSize="@dimen/_12ssp"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/perHourFeeRb" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/maxPerHourFee"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_15sdp"-->
+            <!--                android:layout_marginTop="@dimen/_15sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_15sdp"-->
+            <!--                android:text="1500"-->
+            <!--                android:textSize="@dimen/_12ssp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/perHourFeeRb" />-->
+
+            <TextView
+                android:id="@+id/perMonthFeeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/rectangle_shape"
+                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:hint="@string/per_month_fee"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/perHourFeeRb" />
+
+            <com.warkiz.tickseekbar.TickSeekBar
+                android:id="@+id/perMonthFeeRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/perMonthFeeTv"
+                app:tsb_ticks_count="5"
+                app:tsb_thumb_color="@color/colorAccent"
+                app:tsb_thumb_size="16dp"
+                app:tsb_show_tick_marks_type="oval"
+                app:tsb_tick_marks_color="@color/colorAccent"
+                app:tsb_tick_marks_size="7dp"
+                app:tsb_show_tick_texts="below"
+                app:tsb_min="5000"
+                app:tsb_max="25000"
+
+                app:tsb_tick_texts_color="@color/colorPrimary"
+                app:tsb_tick_texts_size="10sp"
+                app:tsb_track_background_color="@color/gray_div"
+                app:tsb_track_background_size="2dp"
+                app:tsb_track_progress_color="@color/colorPrimary"
+                app:tsb_track_progress_size="3dp"/>
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/minPerMonthFee"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_15sdp"-->
+            <!--                android:layout_marginTop="@dimen/_15sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_15sdp"-->
+            <!--                android:text="1200"-->
+            <!--                android:textSize="@dimen/_12ssp"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/perMonthFeeRb" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/maxPerMonthFee"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_15sdp"-->
+            <!--                android:layout_marginTop="@dimen/_15sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_15sdp"-->
+            <!--                android:text="1500"-->
+            <!--                android:textSize="@dimen/_12ssp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/perMonthFeeRb" />-->
+
+
+            <Button
+                android:id="@+id/saveChangesBtn"
+                style="@style/button_style"
+                android:text="@string/save_Changes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/perMonthFeeRb" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

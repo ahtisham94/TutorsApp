@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/_5sdp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/holo_brwn_circle">
+
+    <TextView
+        android:id="@+id/subjectItemTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/cancelImg"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentStart="true"
+        android:paddingStart="@dimen/_15sdp"
+        android:text="Quran"
+        />
+
+    <ImageView
+        android:id="@+id/cancelImg"
+        app:srcCompat="@drawable/ic_close"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

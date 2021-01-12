@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/profile_icon"
+            android:title="Update Your Profile Status" />
+        <item
+            android:id="@+id/tutionAssignmentTv"
+            android:icon="@drawable/notepad_icon"
+            android:title="Tuition Assignment" />
+        <item
+            android:id="@+id/assignmentHistoryTv"
+            android:icon="@drawable/notepad_icon"
+            android:title="Assignment History" />
+        <item
+            android:id="@+id/cancelltedAssignment"
+            android:icon="@drawable/notepad_icon"
+            android:title="Cancelled Assignments" />
+    </group>
+</menu>

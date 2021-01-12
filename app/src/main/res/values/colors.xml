@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#B5AC97</color>
+    <color name="colorPrimaryDark">#B5AC97</color>
+    <color name="colorAccent">#B5AC97</color>
+    <color name="gray">#4c5055</color>
+    <color name="light_gray">#f2f2f2</color>
+    <color name="gray_div">#DCDCDC</color>
+    <color name="loginEditTexBackgorundColor">#f0f0f0</color>
+    <color name="graniteGreen">#B5AC97</color>
+    <color name="whiteColor">#ffffff</color>
+    <color name="textColorLoginScreen">#B6B7B8</color>
+    <color name="textColorDistanceSearch">#86898C</color>
+    <color name="textColorFeeQualificationSearch">#5C5D5E</color>
+    <color name="bgCircularImage">#DEDFDF</color>
+    <color name="unselectedDotColorViewPager">#EEF1F1</color>
+
+    <color name="mapRadiusBorderColor">#8CC7D6</color>
+    <color name="mapRadiusColor">#B1C7E8</color>
+
+    <color name="greyConstraintLayoutColor">#EAEAEA</color>
+
+    <color name="hintColor">#878787</color>
+
+    <color name="red">#FF0000</color>
+    <color name="black">#000</color>
+</resources>

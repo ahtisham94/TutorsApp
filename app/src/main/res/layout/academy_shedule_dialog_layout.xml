@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/headingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/add_your_scedule"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <RelativeLayout
+                android:id="@+id/scheduleRl"
+                style="@style/spinner_rl_style">
+
+                <Spinner
+                    android:id="@+id/scheduleSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/leveEd"
+                style="@style/edittext_view_style"
+                android:layout_marginTop="1dp"
+                android:maxLength="20"
+                android:hint="@string/enter_your_level"
+                android:imeOptions="actionNext"
+                android:inputType="number" />
+
+
+            <EditText
+                android:id="@+id/subjectEd"
+                style="@style/edittext_view_style"
+                android:maxLength="20"
+                android:layout_marginTop="1dp"
+                android:hint="@string/enter_your_subject"
+                android:imeOptions="actionNext"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/courseName"
+                style="@style/edittext_view_style"
+                android:layout_marginTop="1dp"
+                android:hint="@string/enter_cource_name"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLength="20" />
+
+            <TextView
+                android:id="@+id/onlineClassTv"
+                style="@style/text_view_style"
+                android:layout_marginTop="1dp"
+                android:hint="@string/online_class" />
+
+            <TextView
+                android:id="@+id/venueTv"
+                style="@style/text_view_style"
+                android:layout_marginTop="1dp"
+                android:hint="@string/venue_if_course_is_schedule_at_someplace" />
+
+            <EditText
+                android:id="@+id/teacherNameEd"
+                style="@style/edittext_view_style"
+                android:layout_marginTop="1dp"
+                android:hint="@string/teacher_name"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLength="30" />
+
+            <TextView
+                android:id="@+id/uploadTeacherPicTv"
+                style="@style/text_view_style"
+                android:layout_marginTop="1dp"
+                android:hint="@string/upload_teacher_picture" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:text="Class Schedule"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/startDateTv"
+                    style="@style/text_view_style"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/start_date" />
+
+                <TextView
+                    android:id="@+id/endDateTv"
+                    style="@style/text_view_style"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/end_date" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:text="Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/startTimeTv"
+                    style="@style/text_view_style"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:hint="@string/start_time" />
+
+                <TextView
+                    android:id="@+id/endTimeTv"
+                    style="@style/text_view_style"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/end_time" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/noClassPerWeekEd"
+                style="@style/edittext_view_style"
+                android:layout_marginTop="1dp"
+                android:digits="@string/number_only"
+                android:hint="@string/no_s_of_classes_in_week"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <EditText
+                android:id="@+id/feeEd"
+                style="@style/edittext_view_style"
+                android:layout_marginTop="1dp"
+                android:digits="@string/number_only"
+                android:hint="@string/fee_subject"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="5" />
+
+            <Button
+                android:id="@+id/saveBtn"
+                style="@style/button_style"
+                android:layout_marginTop="1dp"
+                android:text="@string/save" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+

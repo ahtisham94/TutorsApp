@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/dividerUp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_div"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/delExperienceTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:text="X"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dividerUp" />
+
+    <TextView
+        android:id="@+id/instituteTypeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/institute_type"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delExperienceTv" />
+
+    <TextView
+        android:id="@+id/instituteTypeValueTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/delExperienceTv"
+        app:layout_constraintStart_toEndOf="@+id/instituteTypeTv"
+        app:layout_constraintTop_toTopOf="@+id/instituteTypeTv" />
+
+
+    <TextView
+        android:id="@+id/instituteTvKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/institute_school_college"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instituteTypeTv" />
+
+
+    <TextView
+        android:id="@+id/instituteTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/delExperienceTv"
+        app:layout_constraintStart_toEndOf="@+id/instituteTvKey"
+        app:layout_constraintTop_toTopOf="@+id/instituteTvKey" />
+
+    <TextView
+        android:id="@+id/fromDateKeyTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/from_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/instituteTvKey"
+        app:layout_constraintTop_toBottomOf="@+id/instituteTvKey" />
+
+
+    <TextView
+        android:id="@+id/fromTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/delExperienceTv"
+        app:layout_constraintStart_toEndOf="@+id/fromDateKeyTv"
+        app:layout_constraintTop_toTopOf="@+id/fromDateKeyTv" />
+
+
+    <TextView
+        android:id="@+id/dateDateTvKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/to"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fromDateKeyTv"
+        app:layout_constraintTop_toBottomOf="@+id/fromDateKeyTv" />
+
+
+    <TextView
+        android:id="@+id/toTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/delExperienceTv"
+        app:layout_constraintStart_toEndOf="@+id/dateDateTvKey"
+        app:layout_constraintTop_toTopOf="@+id/dateDateTvKey" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/gray_div"
+        android:backgroundTint="@color/gray_div"
+        app:layout_constraintTop_toBottomOf="@+id/toTv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

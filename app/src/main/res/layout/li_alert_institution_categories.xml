@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rootLayout"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bg">
+
+
+    <ImageView
+        android:id="@+id/topIv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:contentDescription="@string/icon"
+        android:src="@drawable/men"
+        android:text="@string/what_categories_do_your" />
+
+    <TextView
+        android:id="@+id/topHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topIv"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/what_categories_do_your"
+        android:textSize="@dimen/_14ssp" />
+
+    <ExpandableListView
+        android:id="@+id/categoriesEl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/doneBtn"
+        android:layout_below="@+id/topHeading"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:clipToPadding="false"
+
+        android:groupIndicator="@null"
+        android:paddingBottom="@dimen/_20sdp"
+        android:scrollbars="vertical" />
+
+
+    <TextView
+        android:id="@+id/doneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dividerq"
+        android:layout_alignEnd="@+id/categoriesEl"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Done"
+        android:layout_gravity="end"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp" />
+
+    <View
+        android:id="@+id/dividerq"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>
