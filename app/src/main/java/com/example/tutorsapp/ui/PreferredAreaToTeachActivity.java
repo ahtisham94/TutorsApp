@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tutorsapp.R;
 import com.example.tutorsapp.TutorApp;
 import com.example.tutorsapp.adapter.SelectedDatedRecyclerAdapter;
+import com.example.tutorsapp.enumerationss.TeacherTypeEnum;
 import com.example.tutorsapp.helper.Constants;
 import com.example.tutorsapp.helper.DialogHelper;
 import com.example.tutorsapp.helper.Persister;
@@ -338,8 +339,12 @@ public class PreferredAreaToTeachActivity extends BaseActivity implements View.O
             public void onResult(boolean z, Response response) {
                 if (((GeneralResponse) response.body()).getIsSuccess()) {
                     TutorApp.userInfo.setProfileStatus("5");
+                    if (Constants.teacherTye == TeacherTypeEnum.PROFESSIONAL_TEACHER)
+                        TutorApp.userInfo.setProfileTypeID("1");
+                    else if (Constants.teacherTye == TeacherTypeEnum.QURAN_TEACHER)
+                        TutorApp.userInfo.setProfileTypeID("2");
                     Persister.setUser(PreferredAreaToTeachActivity.this, TutorApp.userInfo);
-                    Intent intent = new Intent(PreferredAreaToTeachActivity.this, RegistrationFeeActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Intent intent = new Intent(PreferredAreaToTeachActivity.this, RegistrationFeeActivity.class);
                     startActivity(intent);
                 } else {
                     DialogHelper.showMessageDialog(PreferredAreaToTeachActivity.this, "Error", ((GeneralResponse) response.body()).getMessage());

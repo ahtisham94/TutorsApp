@@ -83,7 +83,7 @@ public class VerifyOtpActvity extends BaseActivity {
             public void onResult(boolean z, Response response) {
                 if (((GeneralResponse) response.body()).getFlag().equals("yes")) {
                     GeneralResponse user = (GeneralResponse) response.body();
-                    TutorApp.userInfo = new UserInfo(user.getMsisdn(), user.getSessionID(), user.getProfileStatus(), user.getProfileTypeID(),  user.getUserID());
+                    TutorApp.userInfo = new UserInfo(user.getMsisdn(), user.getSessionID(), user.getProfileStatus(), user.getProfileTypeID(),  user.getUserID(),false);
 
                     Persister.setUser(VerifyOtpActvity.this, TutorApp.userInfo);
 

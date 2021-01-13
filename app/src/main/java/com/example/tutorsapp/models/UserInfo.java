@@ -24,15 +24,20 @@ public class UserInfo {
     @Expose
     private String userID;
 
+    @SerializedName("isActive")
+    @Expose
+    private boolean isActive = false;
+
     public UserInfo() {
     }
 
-    public UserInfo(String msisdn, String sessionId, String profileStatus, String profileTypeID, String userID) {
+    public UserInfo(String msisdn, String sessionId, String profileStatus, String profileTypeID, String userID, boolean isActive) {
         this.msisdn = msisdn;
         this.sessionId = sessionId;
         this.profileStatus = profileStatus;
         this.profileTypeID = profileTypeID;
         this.userID = userID;
+        this.isActive = isActive;
     }
 
     public String getMsisdn() {
@@ -69,6 +74,14 @@ public class UserInfo {
 
     public String getProfileStatus() {
         return profileStatus;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public void setProfileStatus(String profileStatus) {

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tutorsapp.R;
 import com.example.tutorsapp.TutorApp;
+import com.example.tutorsapp.enumerationss.TeacherTypeEnum;
 import com.example.tutorsapp.helper.Constants;
 import com.example.tutorsapp.helper.FormStatusHelper;
 import com.example.tutorsapp.helper.Persister;
@@ -39,6 +40,10 @@ public class SplashActivity extends BaseActivity {
                         Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                         startActivity(intent);
                     } else {
+                        if (TutorApp.userInfo.getProfileTypeID().equals("1"))
+                            Constants.teacherTye = TeacherTypeEnum.PROFESSIONAL_TEACHER;
+                        else if (TutorApp.userInfo.getProfileTypeID().equals("2"))
+                            Constants.teacherTye = TeacherTypeEnum.QURAN_TEACHER;
                         startActivity(FormStatusHelper.getStatusIntent(SplashActivity.this, TutorApp.userInfo).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                     }
                     finish();

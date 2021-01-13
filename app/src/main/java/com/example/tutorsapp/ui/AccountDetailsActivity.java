@@ -218,6 +218,10 @@ public class AccountDetailsActivity extends BaseActivity implements AdapterView.
                         startActivity(new Intent(AccountDetailsActivity.this, RegistrationFeeActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     else {
                         TutorApp.userInfo.setProfileStatus("3");
+                        if (Constants.teacherTye == TeacherTypeEnum.PROFESSIONAL_TEACHER)
+                            TutorApp.userInfo.setProfileTypeID("1");
+                        else if (Constants.teacherTye == TeacherTypeEnum.QURAN_TEACHER)
+                            TutorApp.userInfo.setProfileTypeID("2");
                         Persister.setUser(AccountDetailsActivity.this, TutorApp.userInfo);
                         Intent intent = new Intent(AccountDetailsActivity.this, AvailabilityStatusActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.putExtra("profileId", profileId);

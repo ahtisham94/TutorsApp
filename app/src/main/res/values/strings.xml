@@ -747,5 +747,6 @@
     <string name="bank_transfer">Bank transfer</string>
     <string name="uniform_text">Uniforms</string>
     <string name="logout">Logout</string>
-    >>>>>>> ac4f376523b6c9a78cb539c6a3595397103bf28e
+    <string name="account_activation">Account Activation</string>
+    <string name="sory_for_inconvinence_n_dear_user_nplease_activate_your_account_n_and_make_it_usefull_for_you_n_thanks">Sorry for inconvinence...\n Dear user\nplease activate your account\n and make it usefull for you\n Thanks</string>
 </resources>

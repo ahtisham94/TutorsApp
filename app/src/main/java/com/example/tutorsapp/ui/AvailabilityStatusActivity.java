@@ -20,6 +20,7 @@ import retrofit2.Response;
 import com.example.tutorsapp.R;
 import com.example.tutorsapp.TutorApp;
 import com.example.tutorsapp.enumerationss.TeacherTypeEnum;
+import com.example.tutorsapp.helper.Constants;
 import com.example.tutorsapp.helper.DialogHelper;
 import com.example.tutorsapp.helper.Persister;
 import com.example.tutorsapp.models.AddTeacherAvailiblityModelRequest;
@@ -340,6 +341,10 @@ public class AvailabilityStatusActivity extends BaseActivity implements View.OnC
             public void onResult(boolean z, Response response) {
                 if (((GeneralResponse) response.body()).getIsSuccess()) {
                     TutorApp.userInfo.setProfileStatus("4");
+                    if (Constants.teacherTye == TeacherTypeEnum.PROFESSIONAL_TEACHER)
+                        TutorApp.userInfo.setProfileTypeID("1");
+                    else if (Constants.teacherTye == TeacherTypeEnum.QURAN_TEACHER)
+                        TutorApp.userInfo.setProfileTypeID("2");
                     Persister.setUser(AvailabilityStatusActivity.this, TutorApp.userInfo);
                     Intent intent = new Intent(AvailabilityStatusActivity.this, PreferredAreaToTeachActivity.class);
                     intent.putExtra("profileId", profileId);

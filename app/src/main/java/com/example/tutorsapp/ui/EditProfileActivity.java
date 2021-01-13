@@ -526,6 +526,10 @@ public class EditProfileActivity extends BaseActivity implements View.OnClickLis
             public void onResult(boolean z, Response response) {
                 if (((GeneralResponse) response.body()).getIsSuccess()) {
                     TutorApp.userInfo.setProfileStatus("1");
+                    if (Constants.teacherTye == TeacherTypeEnum.PROFESSIONAL_TEACHER)
+                        TutorApp.userInfo.setProfileTypeID("1");
+                    else if (Constants.teacherTye == TeacherTypeEnum.QURAN_TEACHER)
+                        TutorApp.userInfo.setProfileTypeID("2");
                     Persister.setUser(EditProfileActivity.this, TutorApp.userInfo);
                     if (Constants.teacherTye == TeacherTypeEnum.ACADEMIC_INSTITUTE) {
                         Intent intent = new Intent(EditProfileActivity.this, AcademyInformationActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

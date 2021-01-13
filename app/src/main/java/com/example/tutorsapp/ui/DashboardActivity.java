@@ -31,6 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tutorsapp.BuildConfig;
 import com.example.tutorsapp.R;
+import com.example.tutorsapp.TutorApp;
 import com.example.tutorsapp.adapter.CurrentAssignmentRecyclerAdapter;
 import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
 import com.example.tutorsapp.adapter.GenericCustomSpinnerAdapter;
@@ -46,6 +47,7 @@ import com.example.tutorsapp.models.RequestedAssignmentModel;
 import com.example.tutorsapp.models.ShareTecherDetailsModel;
 import com.example.tutorsapp.models.UserInfo;
 import com.example.tutorsapp.network.APIManager;
+import com.example.tutorsapp.ui.dialogs.AccountActiveDialog;
 import com.google.android.gms.common.api.Api;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
@@ -101,10 +103,16 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         shareAppCv.setOnClickListener(this);
         rateAppCv.setOnClickListener(this);
         logoutCv.setOnClickListener(this);
-//        if(Constants.teacherTye == TeacherTypeEnum.PROFESSIONAL_TEACHER) {
-        getSentRequest();
-//        }
+        if (TutorApp.userInfo.isActive())
+            getSentRequest();
+        else {
+            showAccountActivateDialog();
+        }
 
+    }
+
+    private void showAccountActivateDialog() {
+        new AccountActiveDialog(this).show();
     }
 
     @Override
@@ -240,7 +248,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     @Override
     public void onResult(boolean z, Response response) {
         if (((GeneralResponse) response.body()).getIsSuccess()) {
-            DialogHelper.showMessageDialog(this,"Information","Your Informations has been saved");
+            DialogHelper.showMessageDialog(this, "Information", "Your Informations has been saved");
         }
     }
 

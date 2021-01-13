@@ -676,6 +676,10 @@ public class EducationalDetailsActivity extends BaseActivity implements View.OnC
             public void onResult(boolean z, Response response) {
                 if (((GeneralResponse) response.body()).getIsSuccess()) {
                     TutorApp.userInfo.setProfileStatus("2");
+                    if (Constants.teacherTye == TeacherTypeEnum.PROFESSIONAL_TEACHER)
+                        TutorApp.userInfo.setProfileTypeID("1");
+                    else if (Constants.teacherTye == TeacherTypeEnum.QURAN_TEACHER)
+                        TutorApp.userInfo.setProfileTypeID("2");
                     Persister.setUser(EducationalDetailsActivity.this, TutorApp.userInfo);
                     Intent intent = new Intent(EducationalDetailsActivity.this, AccountDetailsActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("profileId", profileId);
