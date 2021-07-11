@@ -16,26 +16,28 @@ import com.example.tutorsapp.utils.Validations;
 public class FormStatusHelper {
 
     public static Intent getStatusIntent(BaseActivity baseActivity, UserInfo userInfo) {
-        if(userInfo.getProfileTypeID().equals("0")) {
+        if (userInfo.getProfileTypeID().equals("0")) {
             return getTeacherIntent(baseActivity, userInfo.getProfileStatus());
-        } else {
+        } else if (userInfo.getProfileTypeID().equals("1")) {
             return getQuranTeacherIntent(baseActivity, userInfo.getProfileStatus());
+        } else {
+            return getTeacherIntent(baseActivity, userInfo.getProfileStatus());
         }
     }
 
-    public static Intent getTeacherIntent(BaseActivity baseActivity, String profileStatus){
+    public static Intent getTeacherIntent(BaseActivity baseActivity, String profileStatus) {
         Intent intent;
-        if(Validations.isEmpty(profileStatus) || profileStatus.equals("0")) {
+        if (Validations.isEmpty(profileStatus) || profileStatus.equals("0")) {
             intent = new Intent(baseActivity, WelcomeUserActivity.class);
-        } else if(profileStatus.equals("1")) {
+        } else if (profileStatus.equals("1")) {
             intent = new Intent(baseActivity, EducationalDetailsActivity.class);
-        } else if(profileStatus.equals("2")) {
+        } else if (profileStatus.equals("2")) {
             intent = new Intent(baseActivity, AccountDetailsActivity.class);
-        } else if(profileStatus.equals("3")) {
+        } else if (profileStatus.equals("3")) {
             intent = new Intent(baseActivity, AvailabilityStatusActivity.class);
-        } else if(profileStatus.equals("4")) {
+        } else if (profileStatus.equals("4")) {
             intent = new Intent(baseActivity, PreferredAreaToTeachActivity.class);
-        } else if(profileStatus.equals("5")) {
+        } else if (profileStatus.equals("5")) {
             intent = new Intent(baseActivity, DashboardActivity.class);
         } else {
             intent = new Intent(baseActivity, EditProfileActivity.class);
@@ -43,19 +45,19 @@ public class FormStatusHelper {
         return intent;
     }
 
-    public static Intent getQuranTeacherIntent(BaseActivity baseActivity, String profileStatus){
+    public static Intent getQuranTeacherIntent(BaseActivity baseActivity, String profileStatus) {
         Intent intent;
-        if(Validations.isEmpty(profileStatus) || profileStatus.equals("0")){
+        if (Validations.isEmpty(profileStatus) || profileStatus.equals("0")) {
             intent = new Intent(baseActivity, EditProfileActivity.class);
-        } else if(profileStatus.equals("1")) {
+        } else if (profileStatus.equals("1")) {
             intent = new Intent(baseActivity, EducationalDetailsActivity.class);
-        } else if(profileStatus.equals("2")) {
+        } else if (profileStatus.equals("2")) {
             intent = new Intent(baseActivity, AccountDetailsActivity.class);
-        } else if(profileStatus.equals("3")) {
+        } else if (profileStatus.equals("3")) {
             intent = new Intent(baseActivity, AvailabilityStatusActivity.class);
-        } else if(profileStatus.equals("4")) {
+        } else if (profileStatus.equals("4")) {
             intent = new Intent(baseActivity, PreferredAreaToTeachActivity.class);
-        } else if(profileStatus.equals("5")) {
+        } else if (profileStatus.equals("5")) {
             intent = new Intent(baseActivity, DashboardActivity.class);
         } else {
             intent = new Intent(baseActivity, EditProfileActivity.class);

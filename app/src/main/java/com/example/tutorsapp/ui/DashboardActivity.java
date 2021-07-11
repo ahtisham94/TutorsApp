@@ -108,6 +108,8 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         else {
             showAccountActivateDialog();
         }
+        findViewById(R.id.teacherJobsNearYouBtn).setOnClickListener(this);
+        findViewById(R.id.reportBtn).setOnClickListener(this);
 
     }
 
@@ -144,6 +146,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
             case R.id.logoutCv:
                 Persister.setFirstLaunch(this, false);
                 redirectToLogin();
+                break;
             case R.id.shareAppCv:
                 try {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -166,6 +169,14 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 break;
             case R.id.shareDetailBtn:
                 showDetailsDialog();
+                break;
+            case R.id.teacherJobsNearYouBtn:
+                startActivity(new Intent(this,JobViewDetailsActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                break;
+            case R.id.reportBtn:
+                startActivity(new Intent(this,ApplyForJobActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;
             default:
                 break;

@@ -664,7 +664,7 @@
     <string name="add_details_text">Add Details</string>
     <string name="from_text">From</string>
     <string name="number_only">0123456789</string>
-    <string name="alphabets_only">qwertysuiopadfghjklmnbvcxzQWERTYUIOPLKJHGFDSAZXCVBNM</string>
+    <string name="alphabets_only">\u0020 @qwertysuiopadfghjklmnbvcxzQWERTYUIOPLKJHGFDSAZXCVBNM</string>
     <string name="select_available_time_slots">Select available time slots</string>
     <string name="institute_type">Institute Type</string>
     <string name="add_your_academy_location">Add Your Academy Location</string>
@@ -749,4 +749,5 @@
     <string name="logout">Logout</string>
     <string name="account_activation">Account Activation</string>
     <string name="sory_for_inconvinence_n_dear_user_nplease_activate_your_account_n_and_make_it_usefull_for_you_n_thanks">Sorry for inconvinence...\n Dear user\nplease activate your account\n and make it usefull for you\n Thanks</string>
+    <string name="interview_time_date"><![CDATA[Interview Time & Date]]></string>
 </resources>

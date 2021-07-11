@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteColor"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_35sdp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ToolbarTheme"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteColor"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_35sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            tools:context=".ui.JobViewDetailsActivity">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/imageInfoRl"
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:background="@drawable/brown_gradian_bg"
+                    android:elevation="@dimen/_1sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/teacherTypeTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:text="Chemistry Teacher"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/teacherGenderTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="Male/Female"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/noOfPostTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="No of Post : 2"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/instituteNameTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Roots Scools"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/levelTv"
+                    app:layout_constraintStart_toEndOf="@+id/imageInfoRl"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/sportsTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Level: A Level"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/directionTv"
+                    app:layout_constraintStart_toStartOf="@+id/instituteNameTv"
+                    app:layout_constraintTop_toBottomOf="@+id/instituteNameTv" />
+
+                <TextView
+                    android:id="@+id/jobDescTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Level: A Level"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/directionTv"
+                    app:layout_constraintStart_toStartOf="@+id/instituteNameTv"
+                    app:layout_constraintTop_toBottomOf="@+id/sportsTv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/qualificationEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="Hello World"
+                app:titletext="Qualifications" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/experienceEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="5 Years"
+                app:titletext="Experience" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/classEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="10th Standard"
+                app:titletext="Class" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/descEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="Offer is valid till this current month "
+                app:titletext="Description" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/salaryEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="50000 PRK"
+                app:titletext="Salary" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/genderEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="Male/Female"
+                app:titletext="Gender" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/applyBeforeEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="20 May 2021"
+                app:titletext="Apply Before" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/cityEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="Rawalpindi"
+                app:titletext="City" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/locationEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:edEnable="false"
+                app:editTxt="Saddar, Rawalpindi"
+                app:titletext="Location" />
+
+            <CheckBox
+                android:id="@+id/notifyCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Notify me when similar jobs are available" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

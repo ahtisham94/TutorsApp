@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:paddingBottom="@dimen/_35sdp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -118,59 +119,59 @@
             android:id="@+id/tvAssignNote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/curr_assign_head_text"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             android:paddingLeft="@dimen/_10sdp"
             android:paddingRight="@dimen/_10sdp"
-            android:paddingHorizontal="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            app:layout_constraintTop_toBottomOf="@+id/topIv"
+            android:text="@string/curr_assign_head_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topIv" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAssignRequests"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             android:paddingLeft="@dimen/_10sdp"
             android:paddingRight="@dimen/_10sdp"
-            android:paddingHorizontal="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            app:layout_constraintTop_toBottomOf="@+id/tvAssignNote"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvAssignNote" />
 
         <TextView
             android:id="@+id/tvSkillHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/share_your_skills_text"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             android:paddingLeft="@dimen/_10sdp"
             android:paddingRight="@dimen/_10sdp"
-            android:paddingHorizontal="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            app:layout_constraintTop_toBottomOf="@+id/rvAssignRequests"
+            android:text="@string/share_your_skills_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvAssignRequests" />
 
         <TextView
             android:id="@+id/tvSkillsNote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/skill_note_text"
-            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_5sdp"
             android:gravity="center"
-            android:textSize="@dimen/_10ssp"
+            android:paddingHorizontal="@dimen/_10sdp"
             android:paddingLeft="@dimen/_10sdp"
             android:paddingRight="@dimen/_10sdp"
-            android:paddingHorizontal="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            app:layout_constraintTop_toBottomOf="@+id/tvSkillHeading"
+            android:text="@string/skill_note_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSkillHeading" />
 
         <Button
             android:id="@+id/shareDetailBtn"
@@ -180,5 +181,155 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSkillsNote" />
 
+        <TextView
+            android:id="@+id/filterTv"
+            style="@style/text_view_style"
+            android:layout_width="0dp"
+            android:background="@drawable/rectangle_shape"
+            android:text="@string/filter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shareDetailBtn" />
+
+        <RelativeLayout
+            android:id="@+id/teacherJobsNearYouRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filterTv">
+
+            <TextView
+                android:id="@+id/teacherJobsNearYouTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teacher Jobs Near You"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/teacherJobsNearYouBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/confrim_button"
+                android:padding="0dp"
+                android:text="View All"
+                android:textColor="@color/whiteColor"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_8ssp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/teacherJobsNearYouRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/teacherJobsNearYouBtn"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/appliedJobsRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/teacherJobsNearYouRl">
+
+            <TextView
+                android:id="@+id/appliedJobsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Applied Jobs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/appliedJobsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/confrim_button"
+                android:padding="0dp"
+                android:text="View All"
+                android:textColor="@color/whiteColor"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_8ssp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/appliedJobsRlRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appliedJobsBtn"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/ConfirmJobsRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appliedJobsRl">
+
+            <TextView
+                android:id="@+id/ConfirmJobsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Jobs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/ConfirmJobsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/confrim_button"
+                android:padding="0dp"
+                android:text="View All"
+                android:textColor="@color/whiteColor"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_8ssp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ConfirmJobsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ConfirmJobsBtn"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/reportBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/confrim_button"
+            app:layout_constraintTop_toBottomOf="@+id/ConfirmJobsRl"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/whiteColor"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="Report with following document"
+
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

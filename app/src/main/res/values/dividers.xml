@@ -3,6 +3,17 @@
     <declare-styleable name="TimeLineCustomView">
         <attr name="fill_percent" format="integer" />
         <attr name="fill_circle_bg" format="reference" />
-        <attr name="fill_text_color" format="color"/>
+        <attr name="fill_text_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TutorEditText">
+        <attr name="edEnable" format="boolean" />
+        <attr name="titletext" format="string" />
+        <attr name="editTxt" format="string" />
+        <attr name="editHint" format="string" />
+        <attr name="ed_maxLenght" format="integer" min="0" />
+        <attr name="android:inputType" />
+        <attr name="android:imeOptions" />
+        <attr name="ed_digits" format="string" />
     </declare-styleable>
 </resources>

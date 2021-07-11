@@ -112,15 +112,16 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoIv">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_10sdp">
 
 
             <androidx.cardview.widget.CardView
@@ -223,6 +224,7 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:padding="@dimen/_1sdp"
+                android:visibility="gone"
                 app:cardCornerRadius="@dimen/_14sdp"
                 app:cardElevation="@dimen/_3sdp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -269,6 +271,7 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:padding="@dimen/_1sdp"
+                android:visibility="gone"
                 app:cardCornerRadius="@dimen/_14sdp"
                 app:cardElevation="@dimen/_3sdp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -316,12 +319,13 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginBottom="@dimen/_5sdp"
+                android:padding="@dimen/_1sdp"
+                android:visibility="gone"
                 app:cardCornerRadius="@dimen/_14sdp"
                 app:cardElevation="@dimen/_3sdp"
-                android:padding="@dimen/_1sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/academyInstitutionCv"
-                app:layout_constraintBottom_toBottomOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/academyInstitutionCv">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

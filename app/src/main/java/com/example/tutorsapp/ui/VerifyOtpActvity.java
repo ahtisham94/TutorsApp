@@ -83,11 +83,11 @@ public class VerifyOtpActvity extends BaseActivity {
             public void onResult(boolean z, Response response) {
                 if (((GeneralResponse) response.body()).getFlag().equals("yes")) {
                     GeneralResponse user = (GeneralResponse) response.body();
-                    TutorApp.userInfo = new UserInfo(user.getMsisdn(), user.getSessionID(), user.getProfileStatus(), user.getProfileTypeID(),  user.getUserID(),false);
+                    TutorApp.userInfo = new UserInfo(user.getMsisdn(), user.getSessionID(), user.getProfileStatus(), user.getProfileTypeID(), user.getUserID(), false);
 
                     Persister.setUser(VerifyOtpActvity.this, TutorApp.userInfo);
 
-                    if(TutorApp.userInfo.getProfileStatus().equals("5")) {
+                    if (TutorApp.userInfo.getProfileTypeID().equals("5")) {
                         Toast.makeText(tutorApp, "This is Parent/Student account! Please login to our parent student app.", Toast.LENGTH_SHORT).show();
                     } else {
                         startActivity(FormStatusHelper.getStatusIntent(VerifyOtpActvity.this, TutorApp.userInfo).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteColor"
+    android:orientation="vertical"
+    tools:context=".ui.ApplyForJobActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ToolbarTheme"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_35sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/splash_image2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Profile Picture"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/fullNameEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                app:edEnable="true"
+                app:ed_digits="@string/alphabets_only"
+                app:ed_maxLenght="20"
+                app:editHint="Enter Name"
+                app:titletext="Full Name" />
+
+            <com.example.tutorsapp.ui.customview.TutorCustomInputList
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:titletext="Qualificaion" />
+
+            <com.example.tutorsapp.ui.customview.TutorSpinner
+                android:id="@+id/experienceSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:titletext="Experience Level" />
+
+            <include
+                layout="@layout/job_experience_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/dobEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:edEnable="false"
+                app:editHint="DOB"
+                app:titletext="Date Of Birth" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/cnicEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                app:edEnable="true"
+                app:ed_digits="@string/number_only"
+                app:ed_maxLenght="13"
+                app:editHint="xxxxxxxxxxx"
+                app:titletext="CNIC NO ." />
+
+
+            <com.example.tutorsapp.ui.customview.TutorCustomInputList
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:titletext="Core Working Skills" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/currentAddressEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                app:edEnable="true"
+                app:ed_digits="@string/alphabets_only"
+                app:ed_maxLenght="30"
+                app:editHint="Enter current address"
+                app:titletext="Current Address" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/permanentAddressEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                app:edEnable="true"
+                app:ed_digits="@string/alphabets_only"
+                app:ed_maxLenght="30"
+                app:editHint="Enter permanent address"
+                app:titletext="Permanent Address" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/emailAddressEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                app:edEnable="true"
+                app:ed_digits="@string/alphabets_only"
+                app:ed_maxLenght="30"
+                app:editHint="Enter email address"
+                app:titletext="Email Address" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/contactNumEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                app:edEnable="true"
+                app:ed_digits="@string/number_only"
+                app:ed_maxLenght="11"
+                app:editHint="Enter phone number"
+                app:titletext="Phone Number" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorCustomInputList
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:titletext="Language Proficiency" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorCustomInputList
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:titletext="Language Proficiency" />
+
+
+            <com.example.tutorsapp.ui.customview.TutorEditText
+                android:id="@+id/salaryTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:edEnable="false"
+                app:editTxt="10000/-PKR"
+                app:titletext="Salary" />
+
+
+            <LinearLayout
+                android:id="@+id/buttonsLl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/viewDetailsBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/confrim_button"
+                    android:text="View Details"
+                    android:textAllCaps="false"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/applyNowBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/confrim_button"
+                    android:text="Apply Now"
+
+                    android:textAllCaps="false"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
