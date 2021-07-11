@@ -15,5 +15,7 @@
         <attr name="android:inputType" />
         <attr name="android:imeOptions" />
         <attr name="ed_digits" format="string" />
+        <attr name="android:focusable" format="boolean" />
+        <attr name="android:clickable" format="boolean" />
     </declare-styleable>
 </resources>

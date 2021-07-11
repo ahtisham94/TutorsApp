@@ -14,16 +14,21 @@ import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.tutorsapp.R;
+import com.example.tutorsapp.adapter.GenericCustomSpinnerAdapter;
+import com.example.tutorsapp.ui.EditProfileActivity;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
-public class TutorSpinner extends ConstraintLayout {
+public class TutorSpinner<T> extends ConstraintLayout {
 
     LayoutInflater mInflater;
     TextView hintLbl;
     AppCompatSpinner spinner;
     TypedArray typedArray;
     Resources resources;
+    ArrayList<T> arrayList;
+
     public TutorSpinner(Context context) {
         super(context);
         mInflater = LayoutInflater.from(context);
@@ -50,7 +55,8 @@ public class TutorSpinner extends ConstraintLayout {
     private void initViews() {
         View v = mInflater.inflate(R.layout.tutor_spinner_layout, this);
         hintLbl = v.findViewById(R.id.titleTv);
-        spinner = v.findViewById(R.id.editText);
+        spinner = v.findViewById(R.id.spinner);
+        arrayList = new ArrayList<>();
         bindViews();
     }
 
@@ -66,6 +72,15 @@ public class TutorSpinner extends ConstraintLayout {
         } catch (Exception e) {
             Log.e("ex", Objects.requireNonNull(e.getMessage()));
         }
+
+    }
+
+    public Object getSpinnerSelectedItem() {
+        return spinner.getSelectedItem();
+    }
+
+    public void setSpinnerArray(ArrayList<T> arrayList) {
+        spinner.setAdapter(new GenericCustomSpinnerAdapter(getContext(), R.id.spinner_item_tv, R.id.spinner_item_tv, arrayList));
 
     }
 

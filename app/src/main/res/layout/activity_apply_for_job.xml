@@ -58,6 +58,7 @@
                 app:titletext="Full Name" />
 
             <com.example.tutorsapp.ui.customview.TutorCustomInputList
+                android:id="@+id/qualificationList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
@@ -70,12 +71,14 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 app:titletext="Experience Level" />
 
+
             <include
                 layout="@layout/job_experience_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp" />
-
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.example.tutorsapp.ui.customview.TutorEditText
                 android:id="@+id/dobEd"
@@ -83,6 +86,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 app:edEnable="false"
+                android:focusable="true"
+                android:clickable="true"
                 app:editHint="DOB"
                 app:titletext="Date Of Birth" />
 
@@ -102,6 +107,7 @@
 
 
             <com.example.tutorsapp.ui.customview.TutorCustomInputList
+                android:id="@+id/coreWorkingsSkillFlexList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
@@ -165,6 +171,7 @@
 
 
             <com.example.tutorsapp.ui.customview.TutorCustomInputList
+                android:id="@+id/languagesFlexList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
@@ -172,19 +179,18 @@
 
 
             <com.example.tutorsapp.ui.customview.TutorCustomInputList
+                android:id="@+id/computerProfiencyFlexList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                app:titletext="Language Proficiency" />
+                app:titletext="Computer Proficiency" />
 
 
-            <com.example.tutorsapp.ui.customview.TutorEditText
-                android:id="@+id/salaryTv"
+            <com.example.tutorsapp.ui.customview.TutorSpinner
+                android:id="@+id/salarySpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                app:edEnable="false"
-                app:editTxt="10000/-PKR"
                 app:titletext="Salary" />
 
 
@@ -198,25 +204,25 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/viewDetailsBtn"
+                    android:id="@+id/applyNowBtn"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:background="@drawable/confrim_button"
-                    android:text="View Details"
+                    android:text="Apply"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteColor"
                     android:textSize="14sp" />
 
                 <Button
-                    android:id="@+id/applyNowBtn"
+                    android:id="@+id/cancelBtn"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:background="@drawable/confrim_button"
-                    android:text="Apply Now"
+                    android:text="Cancel"
 
                     android:textAllCaps="false"
                     android:textColor="@color/whiteColor"

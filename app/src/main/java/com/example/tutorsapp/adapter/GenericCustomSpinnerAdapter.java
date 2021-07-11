@@ -15,11 +15,11 @@ import com.example.tutorsapp.models.LOVResponseModel;
 
 import java.util.ArrayList;
 
-public class GenericCustomSpinnerAdapter extends ArrayAdapter<LOVResponseModel> {
+public class GenericCustomSpinnerAdapter<T> extends ArrayAdapter<T> {
 
-    ArrayList<LOVResponseModel> arrayList;
+    ArrayList<T> arrayList;
 
-    public GenericCustomSpinnerAdapter(@NonNull Context context, int resource, int textViewResourceId, ArrayList<LOVResponseModel> arrayList) {
+    public GenericCustomSpinnerAdapter(@NonNull Context context, int resource, int textViewResourceId, ArrayList<T> arrayList) {
         super(context, resource, textViewResourceId, arrayList);
         this.arrayList = arrayList;
 
@@ -32,7 +32,11 @@ public class GenericCustomSpinnerAdapter extends ArrayAdapter<LOVResponseModel> 
         LayoutInflater mInflater = LayoutInflater.from(parent.getContext());
         View view = mInflater.inflate(R.layout.spinner_item_layout, parent, false);
         TextView textView = view.findViewById(R.id.spinner_item_tv);
-        textView.setText(arrayList.get(position).getName());
+        T obj = arrayList.get(position);
+        if (obj instanceof LOVResponseModel)
+            textView.setText(((LOVResponseModel) obj).getName());
+        else if (obj instanceof String)
+            textView.setText((String) obj);
 
 
         return view;
@@ -46,14 +50,17 @@ public class GenericCustomSpinnerAdapter extends ArrayAdapter<LOVResponseModel> 
 
         TextView txtTitle = (TextView) convertView.findViewById(R.id.spinner_item_tv);
         TextView spinnerItemValue = (TextView) convertView.findViewById(R.id.spinner_item_tv_value);
-        txtTitle.setText(arrayList.get(position).getName());
-//        spinnerItemValue.setText(arrayList.get(position).getTimeValue());
+        T obj = arrayList.get(position);
+        if (obj instanceof LOVResponseModel)
+            txtTitle.setText(((LOVResponseModel) obj).getName());
+        else if (obj instanceof String)
+            txtTitle.setText((String) obj);
 
         return convertView;
 
     }
 
-    public void setArrayList(ArrayList<LOVResponseModel> arrayList) {
+    public void setArrayList(ArrayList<T> arrayList) {
         this.arrayList.clear();
         this.arrayList = arrayList;
         notifyDataSetChanged();

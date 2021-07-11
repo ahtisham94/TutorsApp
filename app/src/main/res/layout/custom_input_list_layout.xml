@@ -55,7 +55,7 @@
             android:padding="@dimen/_10sdp"
             android:visibility="visible"
             app:alignContent="stretch"
-            app:alignItems="stretch"
+            app:alignItems="flex_start"
             app:flexDirection="row"
             app:flexWrap="wrap"
             app:layout_constraintEnd_toEndOf="parent"

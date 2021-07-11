@@ -1,15 +1,16 @@
 package com.example.tutorsapp.ui.customview;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Spanned;
-import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -28,6 +29,9 @@ public class TutorEditText extends ConstraintLayout {
     EditText aksaEdtext;
     TypedArray typedArray;
     Resources resources;
+    View v;
+    TutorClick clickListenser;
+    ConstraintLayout backgroundLayout;
 
     public TutorEditText(Context context) {
         super(context);
@@ -53,15 +57,17 @@ public class TutorEditText extends ConstraintLayout {
 
 
     private void initViews() {
-        View v = mInflater.inflate(R.layout.tutor_edittext_layout, this);
+        v = mInflater.inflate(R.layout.tutor_edittext_layout, this);
         hintLbl = v.findViewById(R.id.titleTv);
         aksaEdtext = v.findViewById(R.id.editText);
+        backgroundLayout = v.findViewById(R.id.backgroundLayout);
         bindViews();
     }
 
     private void bindViews() {
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void parseAttributes(AttributeSet attrs) {
         typedArray = getContext().obtainStyledAttributes(attrs,
                 R.styleable.TutorEditText, 0, 0);
@@ -72,7 +78,7 @@ public class TutorEditText extends ConstraintLayout {
                 aksaEdtext.setText(typedArray.getString(R.styleable.TutorEditText_editTxt));
             else
                 aksaEdtext.setHint(typedArray.getString(R.styleable.TutorEditText_editHint));
-            aksaEdtext.setEnabled(typedArray.getBoolean(R.styleable.TutorEditText_edEnable, false));
+            aksaEdtext.setFocusable(typedArray.getBoolean(R.styleable.TutorEditText_edEnable, false));
 
             // imeoOptions Set hoye hain
             if (typedArray.getInt(R.styleable.TutorEditText_android_imeOptions, 0) != 0) {
@@ -85,12 +91,26 @@ public class TutorEditText extends ConstraintLayout {
             } else if (typedArray.getInt(R.styleable.TutorEditText_android_inputType, 0) == InputType.TYPE_CLASS_TEXT) {
 
                 aksaEdtext.setFilters(new InputFilter[]{new InputFilter.LengthFilter(typedArray.getInt(R.styleable.TutorEditText_ed_maxLenght, 20)), alphaNumricFilter});
-            }else if (typedArray.getInt(R.styleable.TutorEditText_android_inputType, 0) == InputType.TYPE_CLASS_NUMBER) {
+            } else if (typedArray.getInt(R.styleable.TutorEditText_android_inputType, 0) == InputType.TYPE_CLASS_NUMBER) {
 
                 aksaEdtext.setFilters(new InputFilter[]{new InputFilter.LengthFilter(typedArray.getInt(R.styleable.TutorEditText_ed_maxLenght, 20)), numberOnly});
-            }else {
+            } else {
                 aksaEdtext.setFilters(new InputFilter[]{new InputFilter.LengthFilter(typedArray.getInt(R.styleable.TutorEditText_ed_maxLenght, 20))});
 
+            }
+
+            if (!typedArray.getBoolean(R.styleable.TutorEditText_edEnable, false)) {
+
+//                aksaEdtext.setOnTouchListener((view, motionEvent) -> {
+//                    if (motionEvent.getAction() == MotionEvent.ACTION_UP)
+//                        if (clickListenser != null)
+//                            clickListenser.onTutorClick(this);
+//                    return false;
+//                });
+                aksaEdtext.setOnClickListener(view -> {
+                    if (clickListenser != null)
+                        clickListenser.onTutorClick(this);
+                });
             }
 
 
@@ -118,6 +138,11 @@ public class TutorEditText extends ConstraintLayout {
 
     public String getText() {
         return aksaEdtext.getText().toString();
+    }
+
+    public void setError(String erro) {
+        aksaEdtext.setError(erro);
+        aksaEdtext.requestFocus();
     }
 
     public void setEditTextValue(String value) {
@@ -179,4 +204,16 @@ public class TutorEditText extends ConstraintLayout {
             return cs.toString().substring(0, cs.length() - 1);
         }
     };
+
+    public interface TutorClick {
+        void onTutorClick(TutorEditText tutorEditText);
+    }
+
+    public void setClickListenser(TutorClick clickListenser) {
+        this.clickListenser = clickListenser;
+    }
+
+    public void setAksaEdtextDisable() {
+        aksaEdtext.setEnabled(false);
+    }
 }
