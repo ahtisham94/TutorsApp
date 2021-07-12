@@ -29,6 +29,7 @@
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circularImageCv"
                 android:layout_width="@dimen/_75sdp"
                 android:layout_height="@dimen/_75sdp"
                 android:layout_gravity="center|center_horizontal"
@@ -36,11 +37,13 @@
                 android:src="@drawable/splash_image2" />
 
             <TextView
+                android:id="@+id/profilePicTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="Profile Picture"
+                android:padding="@dimen/_5sdp"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />

@@ -321,6 +321,6 @@ public class AcademyScheduleDialog extends Dialog implements View.OnClickListene
         academyScheduleModel.setEndTime(endTimeTv.getText().toString());
         academyScheduleModel.setNumberClassesInWeek(noClassPerWeekEd.getText().toString());
         academyScheduleModel.setFees(feeEd.getText().toString());
-        callback.returnCall(academyScheduleModel);
+        callback.returnCall(academyScheduleModel,1);
     }
 }

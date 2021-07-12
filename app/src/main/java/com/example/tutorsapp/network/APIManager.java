@@ -24,6 +24,9 @@ import com.example.tutorsapp.models.PreferedAreaModelRequest;
 import com.example.tutorsapp.models.RequestModel;
 import com.example.tutorsapp.models.ShareTecherDetailsModel;
 import com.example.tutorsapp.models.TeacherModel;
+import com.example.tutorsapp.models.jobsModels.GetJobRequestMainResponse;
+import com.example.tutorsapp.models.jobsModels.GetJobsModel;
+import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
 import com.example.tutorsapp.models.login.LoginRequestModel;
 import com.example.tutorsapp.models.login.LoginValidateOTPRequest;
 
@@ -207,6 +210,12 @@ public class APIManager {
     public void shareTeacherDetails(CallbackGenric callback, ShareTecherDetailsModel body) {
         GetDataService service = retrofit.create(GetDataService.class);
         Call<GeneralResponse> result = service.shareTeacherDetails("application/json", body);
+        sendResultGeneric(result, callback);
+    }
+
+    public void getJobs(CallbackGenric callback, GetJobsModel body) {
+        GetDataService service = retrofit.create(GetDataService.class);
+        Call<GeneralResponse<GetJobRequestMainResponse>> result = service.getJobs("application/json", body);
         sendResultGeneric(result, callback);
     }
 

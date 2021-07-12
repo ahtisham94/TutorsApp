@@ -2,12 +2,15 @@
 <resources>
     <color name="colorPrimary">#B5AC97</color>
     <color name="colorPrimaryDark">#B5AC97</color>
+    <color name="colorPrimaryLight">#EDE0C2</color>
     <color name="colorAccent">#B5AC97</color>
     <color name="gray">#4c5055</color>
     <color name="light_gray">#f2f2f2</color>
     <color name="gray_div">#DCDCDC</color>
     <color name="loginEditTexBackgorundColor">#f0f0f0</color>
     <color name="graniteGreen">#B5AC97</color>
+    <color name="greenColor">#4CAF50</color>
+    <color name="greenColorLight">#6CED71</color>
     <color name="whiteColor">#ffffff</color>
     <color name="textColorLoginScreen">#B6B7B8</color>
     <color name="textColorDistanceSearch">#86898C</color>

@@ -4,22 +4,16 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.drawable.ClipDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -32,33 +26,33 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tutorsapp.BuildConfig;
 import com.example.tutorsapp.R;
 import com.example.tutorsapp.TutorApp;
+import com.example.tutorsapp.adapter.ActivityGenericRecyclerAdapter;
 import com.example.tutorsapp.adapter.CurrentAssignmentRecyclerAdapter;
-import com.example.tutorsapp.adapter.CustomSpinnerAdapter;
-import com.example.tutorsapp.adapter.GenericCustomSpinnerAdapter;
-import com.example.tutorsapp.enumerationss.TeacherTypeEnum;
 import com.example.tutorsapp.helper.Constants;
 import com.example.tutorsapp.helper.DialogHelper;
 import com.example.tutorsapp.helper.Persister;
-import com.example.tutorsapp.models.EducationDetailModel;
+import com.example.tutorsapp.interfaces.CallbackGen;
 import com.example.tutorsapp.models.GeneralResponse;
-import com.example.tutorsapp.models.LOVResponseModel;
 import com.example.tutorsapp.models.RequestModel;
-import com.example.tutorsapp.models.RequestedAssignmentModel;
 import com.example.tutorsapp.models.ShareTecherDetailsModel;
 import com.example.tutorsapp.models.UserInfo;
+import com.example.tutorsapp.models.jobsModels.GetJobRequestMainResponse;
+import com.example.tutorsapp.models.jobsModels.GetJobsModel;
+import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
 import com.example.tutorsapp.network.APIManager;
 import com.example.tutorsapp.ui.dialogs.AccountActiveDialog;
-import com.google.android.gms.common.api.Api;
+import com.example.tutorsapp.ui.dialogs.AvailableForInterviewDialog;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Response;
 
-public class DashboardActivity extends BaseActivity implements View.OnClickListener, APIManager.CallbackGenric {
+public class DashboardActivity extends BaseActivity implements View.OnClickListener, APIManager.CallbackGenric
+        , CallbackGen {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -70,6 +64,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     private ConstraintLayout logoutCv;
     private List<RequestModel> requestModels = new ArrayList<>();
     private CurrentAssignmentRecyclerAdapter adapter;
+    RecyclerView teacherJobsNearYouRv, appliedJobsRlRv, confirmJobsRv;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -94,6 +89,10 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         mImageDrawable.setLevel(10000);
         topIv.setOnClickListener(this);
 
+        teacherJobsNearYouRv = findViewById(R.id.teacherJobsNearYouRv);
+        appliedJobsRlRv = findViewById(R.id.appliedJobsRlRv);
+        confirmJobsRv = findViewById(R.id.confirmJobsRv);
+
         findViewById(R.id.tvProfileNote).setOnClickListener(this);
         findViewById(R.id.tutionAssignmentTv).setOnClickListener(this);
         findViewById(R.id.assignmentHistoryTv).setOnClickListener(this);
@@ -109,7 +108,28 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
             showAccountActivateDialog();
         }
         findViewById(R.id.teacherJobsNearYouBtn).setOnClickListener(this);
-        findViewById(R.id.reportBtn).setOnClickListener(this);
+        GetJobsModel request = new GetJobsModel();
+        request.setUserId(Persister.getUser(this).getUserID());
+        APIManager.getInstance().getJobs(new APIManager.CallbackGenric() {
+            @Override
+            public void onResult(boolean z, Response response) {
+                if (((GeneralResponse) response.body()).getIsSuccess()) {
+                    GetJobRequestMainResponse response1 = (GetJobRequestMainResponse) ((GeneralResponse) response.body()).getData();
+                    teacherJobsNearYouRv.setAdapter(new ActivityGenericRecyclerAdapter(response1.getJobsNearBy(),
+                            Constants.AVAILABLE_JOBS, DashboardActivity.this));
+                    appliedJobsRlRv.setAdapter(new ActivityGenericRecyclerAdapter(response1.getAppliedJobs(),
+                            Constants.APPLIED_JOBS, DashboardActivity.this));
+                    confirmJobsRv.setAdapter(new ActivityGenericRecyclerAdapter(response1.getConfirmJobs(),
+                            Constants.CONFRIM_JOBS, DashboardActivity.this));
+
+                }
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        }, request);
 
     }
 
@@ -171,12 +191,8 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 showDetailsDialog();
                 break;
             case R.id.teacherJobsNearYouBtn:
-                startActivity(new Intent(this,JobViewDetailsActivity.class)
-                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                break;
-            case R.id.reportBtn:
-                startActivity(new Intent(this,ApplyForJobActivity.class)
-                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+//                startActivity(new Intent(this, JobViewDetailsActivity.class)
+//                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;
             default:
                 break;
@@ -265,6 +281,24 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public void onError(String error) {
+
+    }
+
+    @Override
+    public void returnCall(Object o, int type) {
+        if (o instanceof GetJobsResponseModel) {
+            if (type == Constants.VIEW_JOB) {
+                Intent viewDetailsIntent = new Intent(this, JobViewDetailsActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                viewDetailsIntent.putExtra(Constants.datePassey, (Serializable) o);
+                startActivity(viewDetailsIntent);
+            } else if (type == Constants.AVAILABLE_JOBS) {
+                Intent applyForJobIntent = new Intent(this, ApplyForJobActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                applyForJobIntent.putExtra(Constants.datePassey, (Serializable) o);
+                startActivity(applyForJobIntent);
+            } else if (type == Constants.APPLIED_JOBS) {
+                new AvailableForInterviewDialog(this).show();
+            }
+        }
 
     }
 }

@@ -129,6 +129,7 @@
             android:text=":" />
 
         <TextView
+            android:id="@+id/applyBeforeTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -162,6 +163,7 @@
             android:text=":" />
 
         <TextView
+            android:id="@+id/interviewTimeDateTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -195,6 +197,7 @@
             android:text=":" />
 
         <TextView
+            android:id="@+id/contactDetailsTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -228,6 +231,7 @@
             android:text=":" />
 
         <TextView
+            android:id="@+id/emailTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -261,6 +265,7 @@
             android:text=":" />
 
         <TextView
+            android:id="@+id/salaryTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -276,13 +281,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:orientation="horizontal"
+        android:paddingBottom="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/salaryLL">
 
         <Button
             android:id="@+id/viewDetailsBtn"
             android:layout_width="0dp"
             android:layout_height="@dimen/_35sdp"
+
             android:layout_marginEnd="@dimen/_5sdp"
             android:layout_weight="1"
             android:background="@drawable/confrim_button"
@@ -297,18 +306,20 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_weight="1"
-            android:background="@drawable/confrim_button"
+            android:background="@drawable/green_button"
             android:text="Apply Now"
             android:textAllCaps="false"
             android:textColor="@color/whiteColor"
             android:textSize="14sp" />
 
     </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@color/gray_div"
-            app:layout_constraintTop_toBottomOf="@+id/buttonsLl" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/gray_div"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsLl" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

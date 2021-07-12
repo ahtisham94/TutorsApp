@@ -1,5 +1,5 @@
 package com.example.tutorsapp.interfaces;
 
 public interface CallbackGen<T> {
-    void returnCall(T t);
+    void returnCall(T t,int type);
 }

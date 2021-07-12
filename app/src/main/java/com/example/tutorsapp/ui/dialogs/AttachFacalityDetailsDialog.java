@@ -115,7 +115,7 @@ public class AttachFacalityDetailsDialog extends Dialog implements View.OnClickL
         academyTeacherModel.setQualification(qualificationEd.getText().toString());
         academyTeacherModel.setTeacherSubject(subjectNameEd.getText().toString());
         academyTeacherModel.setAchievements(achievementsEd.getText().toString());
-        callbackGen.returnCall(academyTeacherModel);
+        callbackGen.returnCall(academyTeacherModel,1);
     }
 
 }

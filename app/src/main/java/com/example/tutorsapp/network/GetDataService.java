@@ -17,6 +17,9 @@ import com.example.tutorsapp.models.PreferedAreaModelRequest;
 import com.example.tutorsapp.models.RequestModel;
 import com.example.tutorsapp.models.ShareTecherDetailsModel;
 import com.example.tutorsapp.models.TeacherModel;
+import com.example.tutorsapp.models.jobsModels.GetJobRequestMainResponse;
+import com.example.tutorsapp.models.jobsModels.GetJobsModel;
+import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
 import com.example.tutorsapp.models.login.LoginRequestModel;
 import com.example.tutorsapp.models.login.LoginValidateOTPRequest;
 
@@ -113,4 +116,7 @@ public interface GetDataService {
 
     @POST("/Teacher/GetRequestDetails")
     Call<GeneralResponse<List<AssignmentDetails>>> getRequestDetails(@Header("Content-Type") String contentType, @Body RequestModel body);
+
+    @POST("/Job/GetJobs")
+    Call<GeneralResponse<GetJobRequestMainResponse>> getJobs(@Header("Content-Type") String contentType, @Body GetJobsModel body);
 }

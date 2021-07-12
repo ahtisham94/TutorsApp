@@ -189,6 +189,8 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 app:edEnable="false"
                 app:editTxt="20 May 2021"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:titletext="Apply Before" />
 
             <com.example.tutorsapp.ui.customview.TutorEditText

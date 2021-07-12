@@ -83,7 +83,7 @@ public class AcademyInformationStepFourActivity extends BaseActivity implements 
             case R.id.sheduleTv:
                 academyScheduleDialog = new AcademyScheduleDialog(this, academyScheduleModel, new CallbackGen<AcademyScheduleModel>() {
                     @Override
-                    public void returnCall(AcademyScheduleModel academyScheduleModel) {
+                    public void returnCall(AcademyScheduleModel academyScheduleModel,int type) {
                         addAcademyScheduleToServer(academyScheduleModel);
                     }
                 });
@@ -92,7 +92,7 @@ public class AcademyInformationStepFourActivity extends BaseActivity implements 
             case R.id.facalityDetailsTv:
                 attachFacalityDetailsDialog = new AttachFacalityDetailsDialog(this, academyTeacherModel, new CallbackGen<AcademyTeacherModel>() {
                     @Override
-                    public void returnCall(AcademyTeacherModel academyTeacherModel) {
+                    public void returnCall(AcademyTeacherModel academyTeacherModel,int type) {
                         addAcademyTeacherToServer(academyTeacherModel);
                     }
                 });
@@ -257,7 +257,7 @@ public class AcademyInformationStepFourActivity extends BaseActivity implements 
                     if (!isTeacherPicFeatureSelected) {
                         attachFacalityDetailsDialog = new AttachFacalityDetailsDialog(AcademyInformationStepFourActivity.this, academyTeacherModel, new CallbackGen<AcademyTeacherModel>() {
                             @Override
-                            public void returnCall(AcademyTeacherModel academyTeacherModel) {
+                            public void returnCall(AcademyTeacherModel academyTeacherModel,int type) {
                                 addAcademyTeacherToServer(academyTeacherModel);
                             }
                         });
@@ -303,7 +303,7 @@ public class AcademyInformationStepFourActivity extends BaseActivity implements 
                     if (!isTeacherPicScheduleSelected) {    //if schedule diaalog is not filled
                         academyScheduleDialog = new AcademyScheduleDialog(AcademyInformationStepFourActivity.this, academyScheduleModel, new CallbackGen<AcademyScheduleModel>() {
                             @Override
-                            public void returnCall(AcademyScheduleModel academyScheduleModel) {
+                            public void returnCall(AcademyScheduleModel academyScheduleModel,int type) {
                                 addAcademyScheduleToServer(academyScheduleModel);
                             }
                         });

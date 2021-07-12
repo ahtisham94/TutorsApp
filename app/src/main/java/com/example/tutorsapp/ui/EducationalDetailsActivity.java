@@ -226,6 +226,7 @@ public class EducationalDetailsActivity extends BaseActivity implements View.OnC
             captureTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    dialog.dismiss();
                     Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(intent, PICK_FROM_CAMERA);
                 }

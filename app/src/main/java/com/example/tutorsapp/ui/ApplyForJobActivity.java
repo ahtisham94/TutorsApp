@@ -1,39 +1,62 @@
 package com.example.tutorsapp.ui;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tutorsapp.R;
+import com.example.tutorsapp.helper.Constants;
+import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
 import com.example.tutorsapp.ui.customview.TutorCustomInputList;
 import com.example.tutorsapp.ui.customview.TutorEditText;
 import com.example.tutorsapp.ui.customview.TutorSpinner;
 
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ApplyForJobActivity extends BaseActivity implements View.OnClickListener, TutorEditText.TutorClick {
     TutorSpinner experienceSpinner, salarySpinner;
     TutorEditText dobEd, fullNameEd, cnicEd, currentAddressEd, permanentAddressEd, emailAddressEd,
             contactNumEd;
-    TextView experienceStartDateTv, experienceEndDateTv;
+    TextView experienceStartDateTv, experienceEndDateTv, profilePicTv;
     Toolbar toolbar;
     Button applyNowBtn, cancelBtn;
     TutorCustomInputList qualificationList, experienceFlexList, coreWorkingsSkillFlexList, languagesFlexList,
             computerProfiencyFlexList;
     EditText schoolNametv, designationEd, gradeClassED;
+    private static final int PICK_FROM_CAMERA = 1;
+    private static final int PICK_FROM_GALLARY = 2;
+    Bitmap resizeBitmap;
+    GetJobsResponseModel responseModel;
+    CircleImageView circularImageCv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +89,7 @@ public class ApplyForJobActivity extends BaseActivity implements View.OnClickLis
         experienceSpinner.setSpinnerArray(arrayList);
         salarySpinner.setSpinnerArray(salarayArray);
         experienceStartDateTv = findViewById(R.id.experienceStartDateTv);
+        circularImageCv = findViewById(R.id.circularImageCv);
         experienceStartDateTv.setOnClickListener(this);
         experienceEndDateTv = findViewById(R.id.experienceEndDateTv);
         experienceEndDateTv.setOnClickListener(this);
@@ -87,6 +111,12 @@ public class ApplyForJobActivity extends BaseActivity implements View.OnClickLis
         contactNumEd = findViewById(R.id.contactNumEd);
         languagesFlexList = findViewById(R.id.languagesFlexList);
         computerProfiencyFlexList = findViewById(R.id.computerProfiencyFlexList);
+        profilePicTv = findViewById(R.id.profilePicTv);
+        profilePicTv.setOnClickListener(this);
+        if (getIntent().getExtras() != null) {
+            responseModel = (GetJobsResponseModel) getIntent().getSerializableExtra(Constants.datePassey);
+
+        }
     }
 
     @Override
@@ -99,6 +129,8 @@ public class ApplyForJobActivity extends BaseActivity implements View.OnClickLis
             applyForJob();
         } else if (view.getId() == R.id.cancelBtn) {
             finish();
+        } else if (view.getId() == R.id.profilePicTv) {
+            showImagePickerDialog();
         }
     }
 
@@ -112,7 +144,7 @@ public class ApplyForJobActivity extends BaseActivity implements View.OnClickLis
         if (fullNameEd.getText().isEmpty()) {
             fullNameEd.setError("Name must be entered");
             return false;
-        }else if(schoolNametv.getText().toString().isEmpty()){
+        } else if (schoolNametv.getText().toString().isEmpty()) {
             schoolNametv.setError("School/Institute Name must be entered");
         }
         return true;
@@ -174,5 +206,98 @@ public class ApplyForJobActivity extends BaseActivity implements View.OnClickLis
         if (item.getItemId() == android.R.id.home)
             onBackPressed();
         return super.onOptionsItemSelected(item);
+    }
+
+    private void loadFromGallery() {
+        Intent pickPhoto = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(pickPhoto, PICK_FROM_GALLARY);
+    }
+
+    private void loadFromCamera() {
+        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, PICK_FROM_CAMERA);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Bitmap bitmap = null;
+
+        switch (requestCode) {
+            case PICK_FROM_GALLARY:
+                if (resultCode == Activity.RESULT_OK) {
+                    //enable is it your final degree radio boxes
+                    try {
+                        final Uri imageUri = data.getData();
+                        final InputStream imageStream = getContentResolver().openInputStream(imageUri);
+
+                        resizeBitmap = Constants.getScaledBitmap(BitmapFactory.decodeStream(imageStream));
+                        circularImageCv.setImageBitmap(resizeBitmap);
+                        circularImageCv.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        showToastBar("Something went wrong", ApplyForJobActivity.this);
+
+                    }
+
+                } else {
+                    showToastBar("You haven't picked Image", ApplyForJobActivity.this);
+                }
+
+                break;
+            case PICK_FROM_CAMERA:
+                if (resultCode == Activity.RESULT_OK) {
+                    try {
+                        assert data != null;
+                        resizeBitmap = Constants.getScaledBitmap((Bitmap) Objects.requireNonNull(data.getExtras().get("data")));
+
+                        circularImageCv.setImageBitmap(resizeBitmap);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        showToastBar("Something went wrong", ApplyForJobActivity.this);
+                    }
+                } else {
+                    showToastBar("You haven't picked Image", ApplyForJobActivity.this);
+                }
+        }
+    }
+
+    private void showImagePickerDialog() {
+        Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        dialog.setCancelable(true);
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.getWindow().setSoftInputMode(
+                    WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
+        }
+        dialog.setContentView(R.layout.li_capture_image_alert);
+
+        TextView galleryTv = dialog.findViewById(R.id.galleryTv);
+        TextView captureTv = dialog.findViewById(R.id.captureTv);
+        if (galleryTv != null)
+            galleryTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    loadFromGallery();
+                    dialog.dismiss();
+
+                }
+            });
+
+        if (captureTv != null)
+            captureTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                    Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent, PICK_FROM_CAMERA);
+                }
+            });
+
+        dialog.show();
     }
 }
