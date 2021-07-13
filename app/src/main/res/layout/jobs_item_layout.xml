@@ -10,11 +10,13 @@
     <RelativeLayout
         android:id="@+id/imageInfoRl"
         android:layout_width="@dimen/_75sdp"
-        android:layout_height="@dimen/_75sdp"
+        android:layout_height="0dp"
         android:background="@drawable/brown_gradian_bg"
         android:elevation="@dimen/_1sdp"
+        android:maxHeight="@dimen/_75sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/salaryLL"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@id/instituteNameTv">
 
         <TextView
             android:id="@+id/teacherTypeTv"

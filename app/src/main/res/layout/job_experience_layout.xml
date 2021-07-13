@@ -79,12 +79,12 @@
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:background="@drawable/border_layout_ed"
-                android:ellipsize="end"
-                android:gravity="center_vertical"
-                android:paddingStart="@dimen/_10sdp"
-                android:focusable="true"
                 android:clickable="true"
-                android:text="Start Date Experience"
+                android:ellipsize="end"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="Start Date Experience"
+                android:paddingStart="@dimen/_10sdp"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -97,8 +97,8 @@
                 android:background="@drawable/border_layout_ed"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
+                android:hint="End Date Experience"
                 android:paddingStart="@dimen/_10sdp"
-                android:text="End Date Experience"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
         </LinearLayout>

@@ -79,7 +79,7 @@ public class ActivityGenericRecyclerAdapter<T> extends RecyclerView.Adapter<Recy
             ((MyJobsHolder) holder).emailTv.setText(((GetJobsResponseModel) obj).getEmail());
             ((MyJobsHolder) holder).applyBeforeLL.setVisibility(View.GONE);
             ((MyJobsHolder) holder).viewDetailsBtn.setOnClickListener(view -> {
-                callbackGen.returnCall(obj,Constants.APPLIED_JOBS);
+                callbackGen.returnCall(obj, Constants.APPLIED_JOBS);
             });
         } else if (holder instanceof MyJobsHolder && obj instanceof GetJobsResponseModel && type == Constants.CONFRIM_JOBS) {
             ((MyJobsHolder) holder).teacherTypeTv.setText(((GetJobsResponseModel) obj).getJobTitle());
@@ -99,6 +99,9 @@ public class ActivityGenericRecyclerAdapter<T> extends RecyclerView.Adapter<Recy
             ((MyJobsHolder) holder).interviewLL.setVisibility(View.GONE);
             ((MyJobsHolder) holder).applyBeforeLL.setVisibility(View.GONE);
             ((MyJobsHolder) holder).applyNowBtn.setEnabled(false);
+            ((MyJobsHolder) holder).viewDetailsBtn.setOnClickListener(view -> {
+                callbackGen.returnCall(obj, Constants.CONFRIM_JOBS);
+            });
         }
     }
 

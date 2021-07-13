@@ -20,6 +20,7 @@ import com.example.tutorsapp.models.TeacherModel;
 import com.example.tutorsapp.models.jobsModels.GetJobRequestMainResponse;
 import com.example.tutorsapp.models.jobsModels.GetJobsModel;
 import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
+import com.example.tutorsapp.models.jobsModels.JobConfirmationRequestModel;
 import com.example.tutorsapp.models.login.LoginRequestModel;
 import com.example.tutorsapp.models.login.LoginValidateOTPRequest;
 
@@ -119,4 +120,9 @@ public interface GetDataService {
 
     @POST("/Job/GetJobs")
     Call<GeneralResponse<GetJobRequestMainResponse>> getJobs(@Header("Content-Type") String contentType, @Body GetJobsModel body);
+
+    @POST("/Job/ApplyForJob")
+    Call<GeneralResponse> applyForJob( @Body RequestBody body);
+    @POST("/Job/ConfirmAvailability")
+    Call<GeneralResponse> confirmJob(@Header("Content-Type") String contentType, @Body JobConfirmationRequestModel bod);
 }

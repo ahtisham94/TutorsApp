@@ -33,7 +33,8 @@ public class Constants {
     public static final int TAKE_PIC_CAMERA = 1234;
     public static final int AVAILABLE_JOBS = 1234;
     public static final int APPLIED_JOBS = 1235;
-    public static final int CONFRIM_JOBS = 1236;
+    public static final int JOB_CONFIATION = 123785;
+    public static final int CONFRIM_JOBS = 35564;
     public static final int VIEW_JOB = 1236;
     public static final String timeFormate = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     public static TeacherTypeEnum teacherTye;

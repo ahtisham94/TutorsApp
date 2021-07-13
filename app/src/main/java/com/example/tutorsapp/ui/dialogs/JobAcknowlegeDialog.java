@@ -6,21 +6,22 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import com.example.tutorsapp.R;
-import com.example.tutorsapp.helper.Constants;
-import com.example.tutorsapp.interfaces.CallbackGen;
 import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
 
-public class AvailableForInterviewDialog extends Dialog {
-    public AvailableForInterviewDialog(@NonNull Context context, CallbackGen callbackGen, GetJobsResponseModel o) {
+public class JobAcknowlegeDialog extends Dialog {
+    TextView dateTv;
+
+    public JobAcknowlegeDialog(@NonNull Context context, GetJobsResponseModel responseModel) {
         super(context);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setCancelable(true);
-        setContentView(R.layout.dialog_available_for_interview);
+        setContentView(R.layout.dialog_job_final_selection_layout);
         if (getWindow() != null) {
             WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
             lp.copyFrom(getWindow().getAttributes());
@@ -29,15 +30,11 @@ public class AvailableForInterviewDialog extends Dialog {
             getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             this.getWindow().setSoftInputMode(
                     WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-
         }
-        findViewById(R.id.okBtn).setOnClickListener(view -> {
-
-            callbackGen.returnCall(o, Constants.JOB_CONFIATION);
+        findViewById(R.id.acknolegeId).setOnClickListener(view -> {
             dismiss();
         });
-        findViewById(R.id.cancelBtn).setOnClickListener(view -> {
-            dismiss();
-        });
+        dateTv = findViewById(R.id.dateTv);
+        dateTv.setText("Date :  " + responseModel.getFinalSelectionDate());
     }
 }

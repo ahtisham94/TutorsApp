@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/jobFilterTv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/relative_top_cornors_bg"
+        android:gravity="center"
+        android:text="Job Filters"
+        android:textColor="@color/whiteColor"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/jobDescRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/rectangle_shape"
+        app:layout_constraintTop_toBottomOf="@+id/jobFilterTv">
+
+        <Spinner
+            android:id="@+id/jobDescSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/schoolCollegeRG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/jobDescRl">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="School/College"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:text="Academies / Institution"
+            android:textColor="@color/black" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/cityRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/rectangle_shape"
+        app:layout_constraintTop_toBottomOf="@+id/schoolCollegeRG">
+
+        <Spinner
+            android:id="@+id/citySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/minumSalaryTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Salary Range"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityRl" />
+
+
+    <com.warkiz.tickseekbar.TickSeekBar
+        android:id="@+id/perHourFeeRb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minumSalaryTv"
+        app:tsb_max="50000"
+        app:tsb_min="10000"
+        app:tsb_show_tick_marks_type="oval"
+        app:tsb_show_tick_texts="below"
+        app:tsb_thumb_color="@color/colorAccent"
+        app:tsb_thumb_size="16dp"
+        app:tsb_tick_marks_color="@color/colorAccent"
+        app:tsb_tick_marks_size="7dp"
+        app:tsb_tick_texts_color="@color/colorPrimary"
+        app:tsb_tick_texts_size="10sp"
+        app:tsb_ticks_count="5"
+        app:tsb_track_background_color="@color/gray_div"
+        app:tsb_track_background_size="2dp"
+        app:tsb_track_progress_color="@color/colorPrimary"
+        app:tsb_track_progress_size="3dp" />
+
+    <EditText
+        android:id="@+id/distanceEd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/rectangle_shape"
+        android:digits="@string/number_only"
+        android:hint="Enter distance in KM"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:paddingStart="@dimen/_15sdp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/perHourFeeRb" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

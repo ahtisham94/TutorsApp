@@ -10,17 +10,14 @@ import android.view.WindowManager;
 import androidx.annotation.NonNull;
 
 import com.example.tutorsapp.R;
-import com.example.tutorsapp.helper.Constants;
-import com.example.tutorsapp.interfaces.CallbackGen;
-import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
 
-public class AvailableForInterviewDialog extends Dialog {
-    public AvailableForInterviewDialog(@NonNull Context context, CallbackGen callbackGen, GetJobsResponseModel o) {
+public class JobFilterDialog extends Dialog {
+    public JobFilterDialog(@NonNull Context context) {
         super(context);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setCancelable(true);
-        setContentView(R.layout.dialog_available_for_interview);
+        setContentView(R.layout.dialog_job_filter_layout);
         if (getWindow() != null) {
             WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
             lp.copyFrom(getWindow().getAttributes());
@@ -31,13 +28,5 @@ public class AvailableForInterviewDialog extends Dialog {
                     WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         }
-        findViewById(R.id.okBtn).setOnClickListener(view -> {
-
-            callbackGen.returnCall(o, Constants.JOB_CONFIATION);
-            dismiss();
-        });
-        findViewById(R.id.cancelBtn).setOnClickListener(view -> {
-            dismiss();
-        });
     }
 }

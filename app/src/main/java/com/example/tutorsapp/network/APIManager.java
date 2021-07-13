@@ -27,6 +27,7 @@ import com.example.tutorsapp.models.TeacherModel;
 import com.example.tutorsapp.models.jobsModels.GetJobRequestMainResponse;
 import com.example.tutorsapp.models.jobsModels.GetJobsModel;
 import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
+import com.example.tutorsapp.models.jobsModels.JobConfirmationRequestModel;
 import com.example.tutorsapp.models.login.LoginRequestModel;
 import com.example.tutorsapp.models.login.LoginValidateOTPRequest;
 
@@ -216,6 +217,18 @@ public class APIManager {
     public void getJobs(CallbackGenric callback, GetJobsModel body) {
         GetDataService service = retrofit.create(GetDataService.class);
         Call<GeneralResponse<GetJobRequestMainResponse>> result = service.getJobs("application/json", body);
+        sendResultGeneric(result, callback);
+    }
+
+    public void confirmJob(CallbackGenric callback, JobConfirmationRequestModel body) {
+        GetDataService service = retrofit.create(GetDataService.class);
+        Call<GeneralResponse> result = service.confirmJob("application/json", body);
+        sendResultGeneric(result, callback);
+    }
+
+    public void applyForJob(CallbackGenric callback, RequestBody body) {
+        GetDataService service = retrofit.create(GetDataService.class);
+        Call<GeneralResponse> result = service.applyForJob(body);
         sendResultGeneric(result, callback);
     }
 

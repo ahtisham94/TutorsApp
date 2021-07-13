@@ -147,9 +147,9 @@ public class TutorCustomInputList extends ConstraintLayout implements View.OnCli
 
     public String getListData() {
         StringBuilder data = new StringBuilder();
-        if (flexboxLayout.getChildCount() > 1) {
+        if (flexboxLayout.getChildCount() >= 1) {
             for (int i = 0; i < flexboxLayout.getChildCount(); i++) {
-                RelativeLayout relativeLayout = (RelativeLayout) flexboxLayout.getChildAt(0);
+                RelativeLayout relativeLayout = (RelativeLayout) flexboxLayout.getChildAt(i);
                 TextView r = (TextView) relativeLayout.getChildAt(0);
                 if (data.length() == 0) {
                     data = new StringBuilder(r.getText().toString());

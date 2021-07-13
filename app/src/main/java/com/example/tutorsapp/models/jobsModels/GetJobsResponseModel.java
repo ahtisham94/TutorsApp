@@ -108,6 +108,9 @@ public class GetJobsResponseModel implements Serializable {
     @SerializedName("subject")
     @Expose
     private String subject;
+    @SerializedName("finalSelectionDate")
+    @Expose
+    private String finalSelectionDate;
 
     public Integer getJobId() {
         return jobId;
@@ -379,5 +382,13 @@ public class GetJobsResponseModel implements Serializable {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public String getFinalSelectionDate() {
+        return finalSelectionDate;
+    }
+
+    public void setFinalSelectionDate(String finalSelectionDate) {
+        this.finalSelectionDate = finalSelectionDate;
     }
 }

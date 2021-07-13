@@ -8,8 +8,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.Window;
 
 import com.example.tutorsapp.R;
+import com.example.tutorsapp.interfaces.CallbackGen;
 
 public class DialogHelper {
+
+   public static CallbackGen callbackGen;
+
+
 
     public static Dialog showMessageDialog(Context context, String title, String message) {
         AlertDialog dialog = new AlertDialog.Builder(context)
@@ -22,6 +27,8 @@ public class DialogHelper {
                     public void onClick(DialogInterface dialog, int which) {
                         // Continue with delete operation
                         dialog.dismiss();
+                        if (callbackGen != null)
+                            callbackGen.returnCall(null, 1);
                     }
                 })
 

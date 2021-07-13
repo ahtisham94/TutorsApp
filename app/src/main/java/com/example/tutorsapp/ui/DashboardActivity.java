@@ -39,9 +39,12 @@ import com.example.tutorsapp.models.UserInfo;
 import com.example.tutorsapp.models.jobsModels.GetJobRequestMainResponse;
 import com.example.tutorsapp.models.jobsModels.GetJobsModel;
 import com.example.tutorsapp.models.jobsModels.GetJobsResponseModel;
+import com.example.tutorsapp.models.jobsModels.JobConfirmationRequestModel;
 import com.example.tutorsapp.network.APIManager;
 import com.example.tutorsapp.ui.dialogs.AccountActiveDialog;
 import com.example.tutorsapp.ui.dialogs.AvailableForInterviewDialog;
+import com.example.tutorsapp.ui.dialogs.JobAcknowlegeDialog;
+import com.example.tutorsapp.ui.dialogs.JobFilterDialog;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 
@@ -97,6 +100,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         findViewById(R.id.tutionAssignmentTv).setOnClickListener(this);
         findViewById(R.id.assignmentHistoryTv).setOnClickListener(this);
         findViewById(R.id.cancelltedAssignmentTv).setOnClickListener(this);
+        findViewById(R.id.filterTv).setOnClickListener(this);
         searchIv.setOnClickListener(this);
         drawerIv.setOnClickListener(this);
         shareAppCv.setOnClickListener(this);
@@ -193,6 +197,9 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
             case R.id.teacherJobsNearYouBtn:
 //                startActivity(new Intent(this, JobViewDetailsActivity.class)
 //                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                break;
+            case R.id.filterTv:
+                new JobFilterDialog(this).show();
                 break;
             default:
                 break;
@@ -296,7 +303,29 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 applyForJobIntent.putExtra(Constants.datePassey, (Serializable) o);
                 startActivity(applyForJobIntent);
             } else if (type == Constants.APPLIED_JOBS) {
-                new AvailableForInterviewDialog(this).show();
+                new AvailableForInterviewDialog(this, this, (GetJobsResponseModel) o).show();
+            } else if (type == Constants.CONFRIM_JOBS) {
+                new JobAcknowlegeDialog(this,  (GetJobsResponseModel) o).show();
+            } else if (type == Constants.JOB_CONFIATION) {
+                JobConfirmationRequestModel requestModel = new JobConfirmationRequestModel();
+                requestModel.setAvailability(true);
+                requestModel.setJobId(((GetJobsResponseModel) o).getJobId());
+                requestModel.setTeacherId(Integer.parseInt(Persister.getUser(DashboardActivity.this).getUserID()));
+                APIManager.getInstance().confirmJob(new APIManager.CallbackGenric() {
+                    @Override
+                    public void onResult(boolean z, Response response) {
+                        if (((GeneralResponse) response.body()).getIsSuccess()) {
+                            DialogHelper.showMessageDialog(DashboardActivity.this,
+                                    "Job Application",
+                                    ((GeneralResponse) response.body()).getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onError(String error) {
+
+                    }
+                }, requestModel);
             }
         }
 
